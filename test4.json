@@ -1,0 +1,61 @@
+{
+  "dag_id": "dag_cccccccccccccccc",
+  "schedule_interval": "@once",
+  "start_date": "2025-06-25",
+  "catchup": false,
+  "tasks": [
+    {
+      "task_id": "extract_data_task",
+      "operator": "PythonOperator",
+      "python_callable_file": "processor",
+      "python_callable_name": "extract_data",
+      "op_kwargs": {
+        "algorithm_module": "processor.extract.readCSV",
+        "algorithm_func": "test_csv",
+        "input_filename": "3f2a4b93-b237-4545-bd50-5004d863567c.csv"
+      }
+    },
+    {
+      "task_id": "transform_data_task2",
+      "operator": "PythonOperator",
+      "python_callable_file": "processor",
+      "python_callable_name": "transform_data",
+      "op_kwargs": {
+        "algorithm_module": "processor.transform.algos_1",
+        "algorithm_func": "add_test",
+        "titlename": "test111"
+      },
+      "dependencies": [
+        "extract_data_task"
+      ]
+    },
+    {
+      "task_id": "transform_data_task",
+      "operator": "PythonOperator",
+      "python_callable_file": "processor",
+      "python_callable_name": "transform_data",
+      "op_kwargs": {
+        "algorithm_module": "processor.transform.algos_1",
+        "algorithm_func": "aggregate_product_data",
+        "multiplier": 2.5
+      },
+      "dependencies": [
+        "transform_data_task2"
+      ]
+    },
+    {
+      "task_id": "load_data_task",
+      "operator": "PythonOperator",
+      "python_callable_file": "processor",
+      "python_callable_name": "load_data",
+      "op_kwargs": {
+        "algorithm_module": "processor.load.saveCSV",
+        "algorithm_func": "test_csv",
+        "output_filename": "222222.csv"
+      },
+      "dependencies": [
+        "transform_data_task"
+      ]
+    }
+  ]
+}

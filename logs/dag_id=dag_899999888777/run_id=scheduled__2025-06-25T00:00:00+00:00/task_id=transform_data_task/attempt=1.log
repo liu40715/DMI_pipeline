@@ -1,0 +1,26 @@
+[2025-07-30T14:29:18.844+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-30T14:29:18.964+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_899999888777.transform_data_task scheduled__2025-06-25T00:00:00+00:00 [queued]>
+[2025-07-30T14:29:18.975+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_899999888777.transform_data_task scheduled__2025-06-25T00:00:00+00:00 [queued]>
+[2025-07-30T14:29:18.975+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-07-30T14:29:18.989+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): transform_data_task> on 2025-06-25 00:00:00+00:00
+[2025-07-30T14:29:18.996+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=9026) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-30T14:29:18.997+0000] {standard_task_runner.py:63} INFO - Started process 9028 to run task
+[2025-07-30T14:29:18.997+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dag_899999888777', 'transform_data_task', 'scheduled__2025-06-25T00:00:00+00:00', '--job-id', '96', '--raw', '--subdir', 'DAGS_FOLDER/dag_generator_python.py', '--cfg-path', '/tmp/tmpy49bqug4']
+[2025-07-30T14:29:18.999+0000] {standard_task_runner.py:91} INFO - Job 96: Subtask transform_data_task
+[2025-07-30T14:29:19.041+0000] {task_command.py:426} INFO - Running <TaskInstance: dag_899999888777.transform_data_task scheduled__2025-06-25T00:00:00+00:00 [running]> on host 14614e29d246
+[2025-07-30T14:29:19.113+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dag_899999888777' AIRFLOW_CTX_TASK_ID='transform_data_task' AIRFLOW_CTX_EXECUTION_DATE='2025-06-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-06-25T00:00:00+00:00'
+[2025-07-30T14:29:19.114+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-30T14:29:19.122+0000] {__init__.py:80} INFO - 執行 transform_data (資料轉換層)
+[2025-07-30T14:29:19.122+0000] {__init__.py:33} INFO - _get_upstream_output_path 上游任務: {'extract_data_task', 'extract_data_task2222'}
+[2025-07-30T14:29:19.135+0000] {__init__.py:45} INFO - 多上游任務拉到的 XCom 清單: ['***_data:dag_899999888777.extract_data_task', '***_data:dag_899999888777.extract_data_task2222']
+[2025-07-30T14:29:19.137+0000] {__init__.py:94} INFO - 已從多個上游合併資料，共 2 筆
+[2025-07-30T14:29:19.138+0000] {__init__.py:103} INFO - 呼叫演算法 'aggregate_product_data' 來自模組 'processor.transform.algos_1'
+[2025-07-30T14:29:19.160+0000] {__init__.py:113} INFO - 轉換後資料已存入 Redis，key=***_data:dag_899999888777.transform_data_task
+[2025-07-30T14:29:19.160+0000] {__init__.py:119} INFO - 刪除上游 Redis key: ***_data:dag_899999888777.extract_data_task
+[2025-07-30T14:29:19.161+0000] {__init__.py:119} INFO - 刪除上游 Redis key: ***_data:dag_899999888777.extract_data_task2222
+[2025-07-30T14:29:19.174+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-07-30T14:29:19.174+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-30T14:29:19.185+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=dag_899999888777, task_id=transform_data_task, run_id=scheduled__2025-06-25T00:00:00+00:00, execution_date=20250625T000000, start_date=20250730T142918, end_date=20250730T142919
+[2025-07-30T14:29:19.210+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-07-30T14:29:19.232+0000] {taskinstance.py:3503} INFO - 2 downstream tasks scheduled from follow-on schedule check
+[2025-07-30T14:29:19.235+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

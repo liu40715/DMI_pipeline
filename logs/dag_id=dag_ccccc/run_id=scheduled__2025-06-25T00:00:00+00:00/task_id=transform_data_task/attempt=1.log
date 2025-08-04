@@ -1,0 +1,71 @@
+[2025-07-28T12:37:38.408+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-28T12:37:38.555+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_ccccc.transform_data_task scheduled__2025-06-25T00:00:00+00:00 [queued]>
+[2025-07-28T12:37:38.562+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_ccccc.transform_data_task scheduled__2025-06-25T00:00:00+00:00 [queued]>
+[2025-07-28T12:37:38.562+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-07-28T12:37:38.574+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): transform_data_task> on 2025-06-25 00:00:00+00:00
+[2025-07-28T12:37:38.582+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=3215) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-28T12:37:38.583+0000] {standard_task_runner.py:63} INFO - Started process 3217 to run task
+[2025-07-28T12:37:38.581+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dag_ccccc', 'transform_data_task', 'scheduled__2025-06-25T00:00:00+00:00', '--job-id', '41', '--raw', '--subdir', 'DAGS_FOLDER/dag_generator_python.py', '--cfg-path', '/tmp/tmp02gn_9zn']
+[2025-07-28T12:37:38.583+0000] {standard_task_runner.py:91} INFO - Job 41: Subtask transform_data_task
+[2025-07-28T12:37:38.638+0000] {task_command.py:426} INFO - Running <TaskInstance: dag_ccccc.transform_data_task scheduled__2025-06-25T00:00:00+00:00 [running]> on host 1171f9d2ced8
+[2025-07-28T12:37:38.726+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dag_ccccc' AIRFLOW_CTX_TASK_ID='transform_data_task' AIRFLOW_CTX_EXECUTION_DATE='2025-06-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-06-25T00:00:00+00:00'
+[2025-07-28T12:37:38.727+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-28T12:37:38.736+0000] {logging_mixin.py:188} INFO - Fetching data from Redis key: ***_data:dag_ccccc
+[2025-07-28T12:37:38.755+0000] {logging_mixin.py:188} INFO - Applying algorithm 'aggregate_product_data' from module 'processor.transform.algos_1'
+[2025-07-28T12:37:38.755+0000] {logging_mixin.py:188} INFO - 1.23
+[2025-07-28T12:37:38.755+0000] {logging_mixin.py:188} INFO - 1111111111111111111111111111111111111
+[2025-07-28T12:37:38.763+0000] {logging_mixin.py:188} INFO - Transformed data stored back to Redis with key: ***_data:dag_ccccc
+[2025-07-28T12:37:38.777+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-07-28T12:37:38.778+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-28T12:37:38.789+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=dag_ccccc, task_id=transform_data_task, run_id=scheduled__2025-06-25T00:00:00+00:00, execution_date=20250625T000000, start_date=20250728T123738, end_date=20250728T123738
+[2025-07-28T12:37:38.837+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-07-28T12:37:38.867+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-07-28T12:37:38.870+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2025-07-29T06:06:58.945+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-29T06:06:58.979+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_ccccc.transform_data_task scheduled__2025-06-25T00:00:00+00:00 [queued]>
+[2025-07-29T06:06:58.987+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_ccccc.transform_data_task scheduled__2025-06-25T00:00:00+00:00 [queued]>
+[2025-07-29T06:06:58.987+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-07-29T06:06:59.000+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): transform_data_task> on 2025-06-25 00:00:00+00:00
+[2025-07-29T06:06:59.007+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=9722) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-29T06:06:59.008+0000] {standard_task_runner.py:63} INFO - Started process 9724 to run task
+[2025-07-29T06:06:59.008+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dag_ccccc', 'transform_data_task', 'scheduled__2025-06-25T00:00:00+00:00', '--job-id', '27', '--raw', '--subdir', 'DAGS_FOLDER/dag_generator_python.py', '--cfg-path', '/tmp/tmpz1_w3355']
+[2025-07-29T06:06:59.009+0000] {standard_task_runner.py:91} INFO - Job 27: Subtask transform_data_task
+[2025-07-29T06:06:59.165+0000] {task_command.py:426} INFO - Running <TaskInstance: dag_ccccc.transform_data_task scheduled__2025-06-25T00:00:00+00:00 [running]> on host ee0266895495
+[2025-07-29T06:06:59.243+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dag_ccccc' AIRFLOW_CTX_TASK_ID='transform_data_task' AIRFLOW_CTX_EXECUTION_DATE='2025-06-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-06-25T00:00:00+00:00'
+[2025-07-29T06:06:59.244+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-29T06:06:59.256+0000] {logging_mixin.py:188} INFO - 測試轉換層
+[2025-07-29T06:06:59.257+0000] {logging_mixin.py:188} INFO - Fetching data from Redis key: ***_data:dag_ccccc
+[2025-07-29T06:06:59.259+0000] {logging_mixin.py:188} INFO - Applying algorithm 'aggregate_product_data' from module 'processor.transform.algos_1'
+[2025-07-29T06:06:59.287+0000] {logging_mixin.py:188} INFO - Transformed data stored back to Redis with key: ***_data:dag_ccccc
+[2025-07-29T06:06:59.300+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-07-29T06:06:59.300+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-29T06:06:59.310+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=dag_ccccc, task_id=transform_data_task, run_id=scheduled__2025-06-25T00:00:00+00:00, execution_date=20250625T000000, start_date=20250729T060658, end_date=20250729T060659
+[2025-07-29T06:06:59.342+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-07-29T06:06:59.469+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-07-29T06:06:59.472+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2025-07-30T05:53:38.983+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-30T05:53:39.004+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_ccccc.transform_data_task scheduled__2025-06-25T00:00:00+00:00 [queued]>
+[2025-07-30T05:53:39.009+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_ccccc.transform_data_task scheduled__2025-06-25T00:00:00+00:00 [queued]>
+[2025-07-30T05:53:39.009+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-07-30T05:53:39.017+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): transform_data_task> on 2025-06-25 00:00:00+00:00
+[2025-07-30T05:53:39.022+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=790) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-30T05:53:39.022+0000] {standard_task_runner.py:63} INFO - Started process 792 to run task
+[2025-07-30T05:53:39.023+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dag_ccccc', 'transform_data_task', 'scheduled__2025-06-25T00:00:00+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/dag_generator_python.py', '--cfg-path', '/tmp/tmpew52v9ag']
+[2025-07-30T05:53:39.024+0000] {standard_task_runner.py:91} INFO - Job 9: Subtask transform_data_task
+[2025-07-30T05:53:39.172+0000] {task_command.py:426} INFO - Running <TaskInstance: dag_ccccc.transform_data_task scheduled__2025-06-25T00:00:00+00:00 [running]> on host 14614e29d246
+[2025-07-30T05:53:39.240+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dag_ccccc' AIRFLOW_CTX_TASK_ID='transform_data_task' AIRFLOW_CTX_EXECUTION_DATE='2025-06-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-06-25T00:00:00+00:00'
+[2025-07-30T05:53:39.241+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-30T05:53:39.249+0000] {logging_mixin.py:188} INFO - 測試轉換層
+[2025-07-30T05:53:39.249+0000] {logging_mixin.py:188} INFO - transform_data_task
+[2025-07-30T05:53:39.249+0000] {logging_mixin.py:188} INFO - ['_AssociationProxy_dag_run_128923708805664_inst', '__abstract__', '__annotations__', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__mapper__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__table__', '__table_args__', '__tablename__', '__weakref__', '_check_and_change_state_before_execution', '_clear_xcom_data', '_command_as_list', '_create_logger_name', '_execute_task', '_execute_task_with_callbacks', '_get_dagrun', '_get_log', '_handle_reschedule', '_log', '_log_config_logger_name', '_logger_name', '_register_dataset_changes', '_run_execute_callback', '_run_raw_task', '_sa_class_manager', '_sa_instance_state', '_sa_registry', '_schedule_downstream_tasks', '_set_context', '_set_state', '_task_display_property_value', '_try_number', 'are_dependencies_met', 'are_dependents_done', 'check_and_change_state_before_execution', 'clear_db_references', 'clear_next_method_args', 'clear_xcom_data', 'command_as_list', 'current_state', 'custom_operator_name', 'dag_id', 'dag_model', 'dag_run', 'defer_task', 'dry_run', 'duration', 'email_alert', 'emit_state_change_metric', 'end_date', 'error', 'execution_date', 'executor_config', 'external_executor_id', 'fetch_handle_failure_context', 'filter_for_tis', 'generate_command', 'get_dagrun', 'get_email_subject_content', 'get_failed_dep_statuses', 'get_num_running_task_instances', 'get_previous_dagrun', 'get_previous_execution_date', 'get_previous_start_date', 'get_previous_ti', 'get_relevant_upstream_map_indexes', 'get_rendered_k8s_spec', 'get_rendered_template_fields', 'get_task_instance', 'get_template_context', 'get_truncated_error_traceback', 'handle_failure', 'hostname', 'init_on_load', 'init_run_context', 'insert_mapping', 'is_eligible_to_retry', 'is_premature', 'is_trigger_log_context', 'job_id', 'key', 'log', 'log_url', 'logger', 'map_index', 'mark_success_url', 'max_tries', 'metadata', 'next_kwargs', 'next_method', 'next_retry_datetime', 'next_try_number', 'note', 'operator', 'operator_name', 'overwrite_params_with_dag_run_conf', 'pid', 'pool', 'pool_slots', 'prev_attempted_tries', 'previous_start_date_success', 'previous_ti', 'previous_ti_success', 'priority_weight', 'queue', 'queued_by_job', 'queued_by_job_id', 'queued_dttm', 'raw', 'ready_for_retry', 'refresh_from_db', 'refresh_from_task', 'registry', 'render_k8s_pod_yaml', 'render_templates', 'rendered_map_index', 'rendered_task_instance_fields', 'run', 'run_as_user', 'run_id', 'save_to_db', 'schedule_downstream_tasks', 'set_duration', 'set_state', 'start_date', 'state', 'stats_tags', 'task', 'task_display_name', 'task_id', 'task_instance_note', 'test_mode', 'ti_selector_condition', 'trigger', 'trigger_id', 'trigger_timeout', 'triggerer_job', 'try_number', 'unixname', 'updated_at', 'xcom_pull', 'xcom_push']
+[2025-07-30T05:53:39.249+0000] {logging_mixin.py:188} INFO - {'extract_data_task'}
+[2025-07-30T05:53:39.249+0000] {logging_mixin.py:188} INFO - 2222222222222222222222222222222
+[2025-07-30T05:53:39.249+0000] {logging_mixin.py:188} INFO - Fetching data from Redis key: ***_data:dag_ccccc
+[2025-07-30T05:53:39.251+0000] {logging_mixin.py:188} INFO - Applying algorithm 'aggregate_product_data' from module 'processor.transform.algos_1'
+[2025-07-30T05:53:39.273+0000] {logging_mixin.py:188} INFO - Transformed data stored back to Redis with key: ***_data:dag_ccccc
+[2025-07-30T05:53:39.286+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-07-30T05:53:39.287+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-30T05:53:39.295+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=dag_ccccc, task_id=transform_data_task, run_id=scheduled__2025-06-25T00:00:00+00:00, execution_date=20250625T000000, start_date=20250730T055339, end_date=20250730T055339
+[2025-07-30T05:53:39.316+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-07-30T05:53:39.437+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-07-30T05:53:39.443+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,62 @@
+[2025-07-30T14:38:57.840+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-30T14:38:57.945+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_bbaaaaaaaaaaaaaaaaaaaaaaaaaaaab.transform_data_task scheduled__2025-06-25T00:00:00+00:00 [queued]>
+[2025-07-30T14:38:57.950+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_bbaaaaaaaaaaaaaaaaaaaaaaaaaaaab.transform_data_task scheduled__2025-06-25T00:00:00+00:00 [queued]>
+[2025-07-30T14:38:57.951+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-07-30T14:38:57.964+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): transform_data_task> on 2025-06-25 00:00:00+00:00
+[2025-07-30T14:38:57.971+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=9627) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-30T14:38:57.972+0000] {standard_task_runner.py:63} INFO - Started process 9629 to run task
+[2025-07-30T14:38:57.972+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dag_bbaaaaaaaaaaaaaaaaaaaaaaaaaaaab', 'transform_data_task', 'scheduled__2025-06-25T00:00:00+00:00', '--job-id', '100', '--raw', '--subdir', 'DAGS_FOLDER/dag_generator_python.py', '--cfg-path', '/tmp/tmpjoyaxta6']
+[2025-07-30T14:38:57.974+0000] {standard_task_runner.py:91} INFO - Job 100: Subtask transform_data_task
+[2025-07-30T14:38:58.027+0000] {task_command.py:426} INFO - Running <TaskInstance: dag_bbaaaaaaaaaaaaaaaaaaaaaaaaaaaab.transform_data_task scheduled__2025-06-25T00:00:00+00:00 [running]> on host 14614e29d246
+[2025-07-30T14:38:58.123+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dag_bbaaaaaaaaaaaaaaaaaaaaaaaaaaaab' AIRFLOW_CTX_TASK_ID='transform_data_task' AIRFLOW_CTX_EXECUTION_DATE='2025-06-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-06-25T00:00:00+00:00'
+[2025-07-30T14:38:58.124+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-30T14:38:58.139+0000] {__init__.py:80} INFO - 執行 transform_data (資料轉換層)
+[2025-07-30T14:38:58.139+0000] {__init__.py:33} INFO - _get_upstream_output_path 上游任務: {'extract_data_task'}
+[2025-07-30T14:38:58.139+0000] {__init__.py:49} INFO - 任務 'transform_data_task' 從單一上游 'extract_data_task' 拉取資料
+[2025-07-30T14:38:58.150+0000] {__init__.py:51} INFO - 拉取到的 redis_key: ***_data:dag_bbaaaaaaaaaaaaaaaaaaaaaaaaaaaab.extract_data_task
+[2025-07-30T14:38:58.153+0000] {__init__.py:103} INFO - 呼叫演算法 'aggregate_product_data' 來自模組 'processor.transform.algos_1'
+[2025-07-30T14:38:58.175+0000] {__init__.py:127} ERROR - transform_data 發生例外: Expected a list of path-like or dataset objects, or a list of batches or tables. The given list contains the following types: BytesIO
+[2025-07-30T14:38:58.175+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-30T14:38:58.175+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/processor/__init__.py", line 105, in transform_data
+    processed_data = func(data_list, **algo_kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/processor/transform/algos_1.py", line 11, in aggregate_product_data
+    df = pd.read_parquet(data)
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/parquet.py", line 670, in read_parquet
+    return impl.read(
+           ^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/parquet.py", line 272, in read
+    pa_table = self.api.parquet.read_table(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pyarrow/parquet/core.py", line 1762, in read_table
+    dataset = ParquetDataset(
+              ^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pyarrow/parquet/core.py", line 1340, in __init__
+    self._dataset = ds.dataset(path_or_paths, filesystem=filesystem,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pyarrow/dataset.py", line 806, in dataset
+    raise TypeError(
+TypeError: Expected a list of path-like or dataset objects, or a list of batches or tables. The given list contains the following types: BytesIO
+[2025-07-30T14:38:58.183+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=dag_bbaaaaaaaaaaaaaaaaaaaaaaaaaaaab, task_id=transform_data_task, run_id=scheduled__2025-06-25T00:00:00+00:00, execution_date=20250625T000000, start_date=20250730T143857, end_date=20250730T143858
+[2025-07-30T14:38:58.190+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 100 for task transform_data_task (Expected a list of path-like or dataset objects, or a list of batches or tables. The given list contains the following types: BytesIO; 9629)
+[2025-07-30T14:38:58.225+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-07-30T14:38:58.252+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-07-30T14:38:58.257+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

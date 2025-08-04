@@ -1,0 +1,5 @@
+product_id,product_name,total_quantity,average_price,total_revenue,order_count
+101,Laptop,15,635.0,8548.5,2
+102,Mouse,150,24.5,4489.5,2
+103,Keyboard,30,75.0,2767.5,1
+104,Monitor,20,300.0,7380.0,1

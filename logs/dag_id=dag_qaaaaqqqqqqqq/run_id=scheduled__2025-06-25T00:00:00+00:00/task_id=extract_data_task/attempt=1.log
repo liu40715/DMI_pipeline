@@ -1,0 +1,23 @@
+[2025-07-30T08:31:21.574+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-30T08:31:21.604+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_qaaaaqqqqqqqq.extract_data_task scheduled__2025-06-25T00:00:00+00:00 [queued]>
+[2025-07-30T08:31:21.609+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_qaaaaqqqqqqqq.extract_data_task scheduled__2025-06-25T00:00:00+00:00 [queued]>
+[2025-07-30T08:31:21.610+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-07-30T08:31:21.725+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): extract_data_task> on 2025-06-25 00:00:00+00:00
+[2025-07-30T08:31:21.736+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=6219) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-30T08:31:21.736+0000] {standard_task_runner.py:63} INFO - Started process 6221 to run task
+[2025-07-30T08:31:21.736+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dag_qaaaaqqqqqqqq', 'extract_data_task', 'scheduled__2025-06-25T00:00:00+00:00', '--job-id', '38', '--raw', '--subdir', 'DAGS_FOLDER/dag_generator_python.py', '--cfg-path', '/tmp/tmpo8jqzdo4']
+[2025-07-30T08:31:21.738+0000] {standard_task_runner.py:91} INFO - Job 38: Subtask extract_data_task
+[2025-07-30T08:31:21.797+0000] {task_command.py:426} INFO - Running <TaskInstance: dag_qaaaaqqqqqqqq.extract_data_task scheduled__2025-06-25T00:00:00+00:00 [running]> on host 14614e29d246
+[2025-07-30T08:31:21.862+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dag_qaaaaqqqqqqqq' AIRFLOW_CTX_TASK_ID='extract_data_task' AIRFLOW_CTX_EXECUTION_DATE='2025-06-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-06-25T00:00:00+00:00'
+[2025-07-30T08:31:21.863+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-30T08:31:21.872+0000] {logging_mixin.py:188} INFO - 測試載入層
+[2025-07-30T08:31:21.873+0000] {logging_mixin.py:188} INFO - Applying algorithm 'test_csv' from module 'processor.extract.readCSV'
+[2025-07-30T08:31:21.873+0000] {logging_mixin.py:188} INFO - 3f2a4b93-b237-4545-bd50-5004d863567c.csv
+[2025-07-30T08:31:21.888+0000] {logging_mixin.py:188} INFO - test11111111111111:***_data:extract_data_task
+[2025-07-30T08:31:21.890+0000] {logging_mixin.py:188} INFO - Data stored in Redis key: ***_data:extract_data_task
+[2025-07-30T08:31:21.903+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-07-30T08:31:21.904+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-30T08:31:21.912+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=dag_qaaaaqqqqqqqq, task_id=extract_data_task, run_id=scheduled__2025-06-25T00:00:00+00:00, execution_date=20250625T000000, start_date=20250730T083121, end_date=20250730T083121
+[2025-07-30T08:31:21.950+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-07-30T08:31:21.974+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-07-30T08:31:21.976+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

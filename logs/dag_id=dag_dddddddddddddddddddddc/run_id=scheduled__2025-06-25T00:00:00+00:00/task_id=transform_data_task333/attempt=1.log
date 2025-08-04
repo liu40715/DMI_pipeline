@@ -1,0 +1,46 @@
+[2025-07-30T08:28:50.281+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-30T08:28:50.300+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_dddddddddddddddddddddc.transform_data_task333 scheduled__2025-06-25T00:00:00+00:00 [queued]>
+[2025-07-30T08:28:50.304+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_dddddddddddddddddddddc.transform_data_task333 scheduled__2025-06-25T00:00:00+00:00 [queued]>
+[2025-07-30T08:28:50.305+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-07-30T08:28:50.421+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): transform_data_task333> on 2025-06-25 00:00:00+00:00
+[2025-07-30T08:28:50.428+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=6063) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-30T08:28:50.429+0000] {standard_task_runner.py:63} INFO - Started process 6067 to run task
+[2025-07-30T08:28:50.429+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dag_dddddddddddddddddddddc', 'transform_data_task333', 'scheduled__2025-06-25T00:00:00+00:00', '--job-id', '37', '--raw', '--subdir', 'DAGS_FOLDER/dag_generator_python.py', '--cfg-path', '/tmp/tmp6wfdmdm7']
+[2025-07-30T08:28:50.430+0000] {standard_task_runner.py:91} INFO - Job 37: Subtask transform_data_task333
+[2025-07-30T08:28:50.482+0000] {task_command.py:426} INFO - Running <TaskInstance: dag_dddddddddddddddddddddc.transform_data_task333 scheduled__2025-06-25T00:00:00+00:00 [running]> on host 14614e29d246
+[2025-07-30T08:28:50.561+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dag_dddddddddddddddddddddc' AIRFLOW_CTX_TASK_ID='transform_data_task333' AIRFLOW_CTX_EXECUTION_DATE='2025-06-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-06-25T00:00:00+00:00'
+[2025-07-30T08:28:50.563+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-30T08:28:50.572+0000] {logging_mixin.py:188} INFO - 測試轉換層
+[2025-07-30T08:28:50.572+0000] {logging_mixin.py:188} INFO - aaaaaaaaa:{'extract_data_task'}
+[2025-07-30T08:28:50.573+0000] {logging_mixin.py:188} INFO - 任務 'transform_data_task333' 正在從上游 'extract_data_task' 拉取資料...
+[2025-07-30T08:28:50.584+0000] {logging_mixin.py:188} INFO - bbbbbbb:***_data:extract_data_task
+[2025-07-30T08:28:50.585+0000] {logging_mixin.py:188} INFO - ***_data:extract_data_task
+[2025-07-30T08:28:50.585+0000] {logging_mixin.py:188} INFO - 2222222222222222222222222222222
+[2025-07-30T08:28:50.586+0000] {logging_mixin.py:188} INFO - ***_data:***_data:extract_data_task
+[2025-07-30T08:28:50.586+0000] {logging_mixin.py:188} INFO - Fetching data from Redis key: ***_data:***_data:extract_data_task
+[2025-07-30T08:28:50.588+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-30T08:28:50.589+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/processor/__init__.py", line 85, in transform_data
+    raise RuntimeError(f"Redis 無資料，key={redis_key}")
+RuntimeError: Redis 無資料，key=***_data:***_data:extract_data_task
+[2025-07-30T08:28:50.601+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=dag_dddddddddddddddddddddc, task_id=transform_data_task333, run_id=scheduled__2025-06-25T00:00:00+00:00, execution_date=20250625T000000, start_date=20250730T082850, end_date=20250730T082850
+[2025-07-30T08:28:50.615+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 37 for task transform_data_task333 (Redis 無資料，key=***_data:***_data:extract_data_task; 6067)
+[2025-07-30T08:28:50.642+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-07-30T08:28:50.660+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-07-30T08:28:50.663+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

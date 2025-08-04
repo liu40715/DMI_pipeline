@@ -1,0 +1,26 @@
+[2025-08-03T07:05:02.987+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-03T07:05:03.048+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_bbb.load_data_task scheduled__2025-08-03T07:04:00+00:00 [queued]>
+[2025-08-03T07:05:03.055+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_bbb.load_data_task scheduled__2025-08-03T07:04:00+00:00 [queued]>
+[2025-08-03T07:05:03.056+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-08-03T07:05:03.236+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): load_data_task> on 2025-08-03 07:04:00+00:00
+[2025-08-03T07:05:03.250+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=2068) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-08-03T07:05:03.251+0000] {standard_task_runner.py:63} INFO - Started process 2070 to run task
+[2025-08-03T07:05:03.251+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dag_bbb', 'load_data_task', 'scheduled__2025-08-03T07:04:00+00:00', '--job-id', '59', '--raw', '--subdir', 'DAGS_FOLDER/dag_generator.py', '--cfg-path', '/tmp/tmp0y6x51ye']
+[2025-08-03T07:05:03.253+0000] {standard_task_runner.py:91} INFO - Job 59: Subtask load_data_task
+[2025-08-03T07:05:03.347+0000] {task_command.py:426} INFO - Running <TaskInstance: dag_bbb.load_data_task scheduled__2025-08-03T07:04:00+00:00 [running]> on host 19828dfd2b76
+[2025-08-03T07:05:03.462+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dag_bbb' AIRFLOW_CTX_TASK_ID='load_data_task' AIRFLOW_CTX_EXECUTION_DATE='2025-08-03T07:04:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-08-03T07:04:00+00:00'
+[2025-08-03T07:05:03.463+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-03T07:05:03.474+0000] {__init__.py:157} INFO - 執行 load_data (資料匯入層)
+[2025-08-03T07:05:03.475+0000] {__init__.py:34} INFO - _get_upstream_output_path 上游任務: {'transform_data_task'}
+[2025-08-03T07:05:03.475+0000] {__init__.py:50} INFO - 任務 'load_data_task' 從單一上游 'transform_data_task' 拉取資料
+[2025-08-03T07:05:03.487+0000] {__init__.py:52} INFO - 拉取到的 redis_key: ***_data:dag_bbb.transform_data_task
+[2025-08-03T07:05:03.487+0000] {__init__.py:170} INFO - 從 Redis 讀取資料，key=***_data:dag_bbb.transform_data_task
+[2025-08-03T07:05:03.491+0000] {__init__.py:180} INFO - 呼叫演算法 'test_csv' 來自模組 'processor.load.saveCSV'
+[2025-08-03T07:05:03.520+0000] {logging_mixin.py:188} INFO - Saved output CSV to: /opt/***/data/output/3f2a4b93-b237-4545-bd50-5004d863567c.csv
+[2025-08-03T07:05:03.521+0000] {__init__.py:186} INFO - 刪除上游 Redis key: ***_data:dag_bbb.transform_data_task
+[2025-08-03T07:05:03.522+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-08-03T07:05:03.522+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-03T07:05:03.531+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=dag_bbb, task_id=load_data_task, run_id=scheduled__2025-08-03T07:04:00+00:00, execution_date=20250803T070400, start_date=20250803T070503, end_date=20250803T070503
+[2025-08-03T07:05:03.585+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-08-03T07:05:03.606+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-03T07:05:03.608+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
