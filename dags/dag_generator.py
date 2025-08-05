@@ -4,6 +4,7 @@ import importlib
 from airflow.models.dag import DAG
 from airflow.operators.python import PythonOperator
 from datetime import datetime
+import psycopg2
 
 def create_dag_from_config(config: dict) -> DAG:
     """由API傳回的config字典建立DAG - 只支援新的配置格式"""
@@ -79,10 +80,25 @@ def create_dag_from_config(config: dict) -> DAG:
     
     return dag
 
-# 呼叫API取得DAG設定清單
-api_url = "http://172.20.10.10:8000/dags/"
-response = requests.get(api_url)
-dag_configs = response.json()
+# 建立資料庫連線
+conn = psycopg2.connect(
+    database="airflow",
+    user="airflow",
+    password="airflow",
+    host="postgres",
+    port=5432
+)
+cur = conn.cursor()
+
+# 查詢dags_backend表的全部資料
+cur.execute("SELECT dag_id, schedule_interval, start_date, catchup, tasks FROM dags_backend;")
+rows = cur.fetchall()
+
+columns = [desc[0] for desc in cur.description]
+dag_configs = [dict(zip(columns, row)) for row in rows]
+
+cur.close()
+conn.close()
 
 # 依API回傳的設定，動態產生多個DAG
 for config in dag_configs:
