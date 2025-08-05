@@ -1,1 +1,0 @@
-[2025-08-03T07:09:01.439+0000] {scheduler_job_runner.py:769} ERROR - Executor reports task instance <TaskInstance: dag_bbb.extract_data_task scheduled__2025-08-03T07:08:00+00:00 [queued]> finished (failed) although the task says it's queued. (Info: None) Was the task killed externally?

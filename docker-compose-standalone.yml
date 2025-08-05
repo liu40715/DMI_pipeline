@@ -1,0 +1,79 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    ports:
+      - "5432:5432"
+    restart: always
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "airflow"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - postgres-db-volume:/var/lib/postgresql/data
+
+  airflow:
+    build:
+      context: ./airflow
+    image: my-airflow:latest
+    user: "0:0"
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+      AIRFLOW__CORE__FERNET_KEY: '7mSIaL1wQmZA5zlTxddiKE-M-GZXWYLVhSts8RU8gBM='
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+      AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'False'
+      AIRFLOW__API__AUTH_BACKENDS: 'airflow.api.auth.backend.basic_auth'
+    depends_on:
+      - postgres
+    ports:
+      - "8080:8080"
+    entrypoint: /bin/bash
+    command: >
+      -c "airflow db init &&
+          airflow users create --role Admin --username admin --password admin --email admin@example.com --firstname Admin --lastname User &&
+          airflow scheduler & airflow webserver"
+    restart: always
+
+  fastapi:
+    build:
+      context: ./fastapi
+    container_name: my-fastapi
+    restart: always
+    environment:
+      - DATABASE_URL=postgresql://airflow:airflow@postgres:5432/airflow
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./fastapi/data:/app/data
+
+  adminer:
+    image: adminer
+    container_name: my-adminer
+    restart: always
+    ports:
+      - "8081:8080"
+
+  redis:
+    image: redis:alpine
+    container_name: my-redis
+    restart: always
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres-db-volume:

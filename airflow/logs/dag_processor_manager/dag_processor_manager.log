@@ -1,0 +1,423 @@
+[2025-08-05T06:06:51.437+0000] {manager.py:470} INFO - Processing files using up to 2 processes at a time 
+[2025-08-05T06:06:51.437+0000] {manager.py:471} INFO - Process each file at most once every 30 seconds
+[2025-08-05T06:06:51.437+0000] {manager.py:472} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-08-05T06:06:51.437+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-08-05T06:06:51.440+0000] {manager.py:740} INFO - There are 4 files in /opt/airflow/dags
+[2025-08-05T06:06:51.517+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_generator.py                                 0           0  0.04s           2025-08-05T06:06:51
+/opt/airflow/dags/cleanup_paused_dags.py    186  0.03s             0           0
+/opt/airflow/dags/cleanup_logs.py                                  0           0
+/opt/airflow/dags/processor/__init__.py                            0           0
+================================================================================
+[2025-08-05T06:07:22.078+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/processor/__init__.py                            0           0  1.22s           2025-08-05T06:06:53
+/opt/airflow/dags/cleanup_paused_dags.py    227  0.00s             1           0  0.30s           2025-08-05T06:06:51
+/opt/airflow/dags/cleanup_logs.py                                  1           0  0.15s           2025-08-05T06:06:51
+/opt/airflow/dags/dag_generator.py          224  0.01s             0           0  0.04s           2025-08-05T06:06:51
+================================================================================
+[2025-08-05T06:07:52.347+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/processor/__init__.py                            0           0  0.23s           2025-08-05T06:07:23
+/opt/airflow/dags/cleanup_logs.py                                  1           0  0.08s           2025-08-05T06:07:22
+/opt/airflow/dags/cleanup_paused_dags.py    269  0.00s             1           0  0.08s           2025-08-05T06:07:22
+/opt/airflow/dags/dag_generator.py          266  0.01s             0           0  0.03s           2025-08-05T06:07:22
+================================================================================
+[2025-08-05T06:08:22.677+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_generator.py                                 1           0  0.47s           2025-08-05T06:07:52
+/opt/airflow/dags/processor/__init__.py                            0           0  0.30s           2025-08-05T06:07:53
+/opt/airflow/dags/cleanup_logs.py           329  0.00s             1           0  0.08s           2025-08-05T06:07:52
+/opt/airflow/dags/cleanup_paused_dags.py    326  0.01s             1           0  0.08s           2025-08-05T06:07:52
+================================================================================
+[2025-08-05T06:08:53.242+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_generator.py                                 1           0  0.38s           2025-08-05T06:08:24
+/opt/airflow/dags/processor/__init__.py                            0           0  0.32s           2025-08-05T06:08:24
+/opt/airflow/dags/cleanup_paused_dags.py    369  0.01s             1           0  0.11s           2025-08-05T06:08:22
+/opt/airflow/dags/cleanup_logs.py           372  0.01s             1           0  0.09s           2025-08-05T06:08:22
+================================================================================
+[2025-08-05T06:09:23.827+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_generator.py                                 1           0  0.43s           2025-08-05T06:08:54
+/opt/airflow/dags/processor/__init__.py                            0           0  0.24s           2025-08-05T06:08:54
+/opt/airflow/dags/cleanup_paused_dags.py    414  0.01s             1           0  0.09s           2025-08-05T06:08:53
+/opt/airflow/dags/cleanup_logs.py           417  0.00s             1           0  0.08s           2025-08-05T06:08:53
+================================================================================
+[2025-08-05T06:09:54.507+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_generator.py                                 1           0  0.41s           2025-08-05T06:09:25
+/opt/airflow/dags/processor/__init__.py                            0           0  0.24s           2025-08-05T06:09:25
+/opt/airflow/dags/cleanup_paused_dags.py    450  0.01s             1           0  0.08s           2025-08-05T06:09:23
+/opt/airflow/dags/cleanup_logs.py           453  0.00s             1           0  0.07s           2025-08-05T06:09:23
+================================================================================
+[2025-08-05T06:10:24.983+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_generator.py                                 1           0  0.41s           2025-08-05T06:09:55
+/opt/airflow/dags/processor/__init__.py                            0           0  0.23s           2025-08-05T06:09:55
+/opt/airflow/dags/cleanup_paused_dags.py    495  0.01s             1           0  0.08s           2025-08-05T06:09:54
+/opt/airflow/dags/cleanup_logs.py           498  0.00s             1           0  0.08s           2025-08-05T06:09:54
+================================================================================
+[2025-08-05T06:10:55.564+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_generator.py                                 1           0  0.40s           2025-08-05T06:10:26
+/opt/airflow/dags/processor/__init__.py                            0           0  0.33s           2025-08-05T06:10:26
+/opt/airflow/dags/cleanup_paused_dags.py    531  0.01s             1           0  0.08s           2025-08-05T06:10:25
+/opt/airflow/dags/cleanup_logs.py           534  0.00s             1           0  0.08s           2025-08-05T06:10:25
+================================================================================
+[2025-08-05T06:11:26.101+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_generator.py                                 1           0  0.38s           2025-08-05T06:10:56
+/opt/airflow/dags/processor/__init__.py                            0           0  0.32s           2025-08-05T06:10:56
+/opt/airflow/dags/cleanup_paused_dags.py    576  0.01s             1           0  0.09s           2025-08-05T06:10:55
+/opt/airflow/dags/cleanup_logs.py           579  0.01s             1           0  0.09s           2025-08-05T06:10:55
+================================================================================
+[2025-08-05T06:11:51.583+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-08-05T06:11:51.589+0000] {manager.py:740} INFO - There are 4 files in /opt/airflow/dags
+[2025-08-05T06:11:56.632+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_generator.py                                 1           0  0.41s           2025-08-05T06:11:27
+/opt/airflow/dags/processor/__init__.py                            0           0  0.33s           2025-08-05T06:11:27
+/opt/airflow/dags/cleanup_paused_dags.py    619  0.01s             1           0  0.10s           2025-08-05T06:11:26
+/opt/airflow/dags/cleanup_logs.py           622  0.00s             1           0  0.09s           2025-08-05T06:11:26
+================================================================================
+[2025-08-05T06:12:27.084+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_generator.py                                 1           0  0.39s           2025-08-05T06:11:58
+/opt/airflow/dags/processor/__init__.py                            0           0  0.24s           2025-08-05T06:11:57
+/opt/airflow/dags/cleanup_paused_dags.py    657  0.01s             1           0  0.07s           2025-08-05T06:11:56
+/opt/airflow/dags/cleanup_logs.py           660  0.00s             1           0  0.07s           2025-08-05T06:11:56
+================================================================================
+[2025-08-05T06:12:57.607+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_generator.py                                 1           0  0.41s           2025-08-05T06:12:28
+/opt/airflow/dags/processor/__init__.py                            0           0  0.35s           2025-08-05T06:12:28
+/opt/airflow/dags/cleanup_paused_dags.py    700  0.01s             1           0  0.08s           2025-08-05T06:12:27
+/opt/airflow/dags/cleanup_logs.py           703  0.00s             1           0  0.07s           2025-08-05T06:12:27
+================================================================================
+[2025-08-05T06:13:28.150+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_generator.py                                 1           0  0.40s           2025-08-05T06:12:59
+/opt/airflow/dags/processor/__init__.py                            0           0  0.33s           2025-08-05T06:12:58
+/opt/airflow/dags/cleanup_paused_dags.py    738  0.01s             1           0  0.10s           2025-08-05T06:12:57
+/opt/airflow/dags/cleanup_logs.py           741  0.00s             1           0  0.09s           2025-08-05T06:12:57
+================================================================================
+[2025-08-05T06:13:58.731+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_generator.py                                 1           0  0.40s           2025-08-05T06:13:29
+/opt/airflow/dags/processor/__init__.py                            0           0  0.33s           2025-08-05T06:13:29
+/opt/airflow/dags/cleanup_paused_dags.py    781  0.01s             1           0  0.08s           2025-08-05T06:13:28
+/opt/airflow/dags/cleanup_logs.py           784  0.00s             1           0  0.08s           2025-08-05T06:13:28
+================================================================================
+[2025-08-05T06:22:30.726+0000] {manager.py:470} INFO - Processing files using up to 2 processes at a time 
+[2025-08-05T06:22:30.727+0000] {manager.py:471} INFO - Process each file at most once every 30 seconds
+[2025-08-05T06:22:30.727+0000] {manager.py:472} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-08-05T06:22:30.728+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-08-05T06:22:30.737+0000] {manager.py:740} INFO - There are 4 files in /opt/airflow/dags
+[2025-08-05T06:22:30.858+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/cleanup_paused_dags.py    185  0.05s             0           0
+/opt/airflow/dags/cleanup_logs.py                                  0           0
+/opt/airflow/dags/dag_generator.py          182  0.06s             0           0
+/opt/airflow/dags/processor/__init__.py                            0           0
+================================================================================
+[2025-08-05T06:23:01.412+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/processor/__init__.py                            0           0  1.98s           2025-08-05T06:22:33
+/opt/airflow/dags/cleanup_paused_dags.py    226  0.00s             1           0  0.48s           2025-08-05T06:22:31
+/opt/airflow/dags/cleanup_logs.py                                  1           0  0.41s           2025-08-05T06:22:31
+/opt/airflow/dags/dag_generator.py          223  0.01s             0           0  0.06s           2025-08-05T06:22:30
+================================================================================
+[2025-08-05T06:23:31.668+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/processor/__init__.py                            0           0  0.28s           2025-08-05T06:23:03
+/opt/airflow/dags/cleanup_paused_dags.py    268  0.00s             1           0  0.08s           2025-08-05T06:23:01
+/opt/airflow/dags/cleanup_logs.py                                  1           0  0.07s           2025-08-05T06:23:01
+/opt/airflow/dags/dag_generator.py          265  0.01s             0           0  0.04s           2025-08-05T06:23:01
+================================================================================
+[2025-08-05T06:23:39.995+0000] {manager.py:452} INFO - Exiting gracefully upon receiving signal 15
+[2025-08-05T06:24:09.562+0000] {manager.py:470} INFO - Processing files using up to 2 processes at a time 
+[2025-08-05T06:24:09.564+0000] {manager.py:471} INFO - Process each file at most once every 30 seconds
+[2025-08-05T06:24:09.564+0000] {manager.py:472} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-08-05T06:24:09.564+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-08-05T06:24:09.567+0000] {manager.py:740} INFO - There are 4 files in /opt/airflow/dags
+[2025-08-05T06:24:09.637+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/cleanup_paused_dags.py    186  0.03s             0           0
+/opt/airflow/dags/cleanup_logs.py                                  0           0
+/opt/airflow/dags/dag_generator.py          182  0.03s             0           0
+/opt/airflow/dags/processor/__init__.py                            0           0
+================================================================================
+[2025-08-05T06:24:40.087+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/processor/__init__.py                            0           0  1.06s           2025-08-05T06:24:10
+/opt/airflow/dags/cleanup_paused_dags.py    226  0.01s             1           0  0.32s           2025-08-05T06:24:09
+/opt/airflow/dags/cleanup_logs.py                                  1           0  0.27s           2025-08-05T06:24:09
+/opt/airflow/dags/dag_generator.py          223  0.01s             0           0  0.04s           2025-08-05T06:24:09
+================================================================================
+[2025-08-05T06:25:10.384+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/processor/__init__.py                            0           0  0.24s           2025-08-05T06:24:41
+/opt/airflow/dags/cleanup_paused_dags.py    270  0.01s             1           0  0.09s           2025-08-05T06:24:40
+/opt/airflow/dags/cleanup_logs.py                                  1           0  0.08s           2025-08-05T06:24:40
+/opt/airflow/dags/dag_generator.py          267  0.02s             0           0  0.05s           2025-08-05T06:24:40
+================================================================================
+[2025-08-05T06:25:40.820+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_generator.py                                 1           0  0.72s           2025-08-05T06:25:11
+/opt/airflow/dags/processor/__init__.py                            0           0  0.25s           2025-08-05T06:25:11
+/opt/airflow/dags/cleanup_paused_dags.py    326  0.01s             1           0  0.15s           2025-08-05T06:25:10
+/opt/airflow/dags/cleanup_logs.py           329  0.00s             1           0  0.13s           2025-08-05T06:25:10
+================================================================================
+[2025-08-05T06:26:11.350+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_generator.py                                 1           0  0.35s           2025-08-05T06:25:42
+/opt/airflow/dags/processor/__init__.py                            0           0  0.26s           2025-08-05T06:25:42
+/opt/airflow/dags/cleanup_paused_dags.py    371  0.01s             1           0  0.10s           2025-08-05T06:25:40
+/opt/airflow/dags/cleanup_logs.py           374  0.00s             1           0  0.09s           2025-08-05T06:25:40
+================================================================================
+[2025-08-05T06:26:41.839+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_generator.py                                 1           0  0.41s           2025-08-05T06:26:12
+/opt/airflow/dags/processor/__init__.py                            0           0  0.23s           2025-08-05T06:26:12
+/opt/airflow/dags/cleanup_logs.py           417  0.00s             1           0  0.09s           2025-08-05T06:26:11
+/opt/airflow/dags/cleanup_paused_dags.py    414  0.01s             1           0  0.09s           2025-08-05T06:26:11
+================================================================================
+[2025-08-05T06:27:12.240+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_generator.py                                 1           0  0.40s           2025-08-05T06:26:43
+/opt/airflow/dags/processor/__init__.py                            0           0  0.24s           2025-08-05T06:26:43
+/opt/airflow/dags/cleanup_paused_dags.py    452  0.01s             1           0  0.07s           2025-08-05T06:26:41
+/opt/airflow/dags/cleanup_logs.py           455  0.00s             1           0  0.07s           2025-08-05T06:26:41
+================================================================================
+[2025-08-05T06:27:42.749+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_generator.py                                 1           0  0.38s           2025-08-05T06:27:13
+/opt/airflow/dags/processor/__init__.py                            0           0  0.23s           2025-08-05T06:27:13
+/opt/airflow/dags/cleanup_paused_dags.py    495  0.01s             1           0  0.09s           2025-08-05T06:27:12
+/opt/airflow/dags/cleanup_logs.py           498  0.00s             1           0  0.09s           2025-08-05T06:27:12
+================================================================================
+[2025-08-05T06:28:13.275+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_generator.py                                 1           0  0.38s           2025-08-05T06:27:44
+/opt/airflow/dags/processor/__init__.py                            0           0  0.33s           2025-08-05T06:27:44
+/opt/airflow/dags/cleanup_paused_dags.py    533  0.01s             1           0  0.09s           2025-08-05T06:27:42
+/opt/airflow/dags/cleanup_logs.py           536  0.00s             1           0  0.08s           2025-08-05T06:27:42
+================================================================================
+[2025-08-05T06:28:43.713+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_generator.py                                 1           0  0.40s           2025-08-05T06:28:14
+/opt/airflow/dags/processor/__init__.py                            0           0  0.23s           2025-08-05T06:28:14
+/opt/airflow/dags/cleanup_paused_dags.py    576  0.02s             1           0  0.09s           2025-08-05T06:28:13
+/opt/airflow/dags/cleanup_logs.py           579  0.01s             1           0  0.09s           2025-08-05T06:28:13
+================================================================================
+[2025-08-05T06:29:10.192+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-08-05T06:29:10.199+0000] {manager.py:740} INFO - There are 4 files in /opt/airflow/dags
+[2025-08-05T06:29:14.230+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_generator.py                                 1           0  0.45s           2025-08-05T06:28:45
+/opt/airflow/dags/processor/__init__.py                            0           0  0.25s           2025-08-05T06:28:45
+/opt/airflow/dags/cleanup_paused_dags.py    621  0.01s             1           0  0.13s           2025-08-05T06:28:43
+/opt/airflow/dags/cleanup_logs.py           624  0.00s             1           0  0.10s           2025-08-05T06:28:43
+================================================================================
+[2025-08-05T06:29:44.630+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_generator.py                                 1           0  0.40s           2025-08-05T06:29:15
+/opt/airflow/dags/processor/__init__.py                            0           0  0.24s           2025-08-05T06:29:15
+/opt/airflow/dags/cleanup_paused_dags.py    658  0.01s             1           0  0.08s           2025-08-05T06:29:14
+/opt/airflow/dags/cleanup_logs.py           661  0.00s             1           0  0.07s           2025-08-05T06:29:14
+================================================================================
+[2025-08-05T06:30:15.143+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_generator.py                                 1           0  0.38s           2025-08-05T06:29:46
+/opt/airflow/dags/processor/__init__.py                            0           0  0.35s           2025-08-05T06:29:45
+/opt/airflow/dags/cleanup_paused_dags.py    703  0.01s             1           0  0.08s           2025-08-05T06:29:44
+/opt/airflow/dags/cleanup_logs.py           706  0.00s             1           0  0.07s           2025-08-05T06:29:44
+================================================================================
+[2025-08-05T06:30:45.726+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_generator.py                                 1           0  0.41s           2025-08-05T06:30:16
+/opt/airflow/dags/processor/__init__.py                            0           0  0.34s           2025-08-05T06:30:16
+/opt/airflow/dags/cleanup_paused_dags.py    739  0.01s             1           0  0.09s           2025-08-05T06:30:15
+/opt/airflow/dags/cleanup_logs.py           742  0.00s             1           0  0.09s           2025-08-05T06:30:15
+================================================================================
+[2025-08-05T06:31:01.967+0000] {manager.py:452} INFO - Exiting gracefully upon receiving signal 15
+[2025-08-05T06:59:39.723+0000] {manager.py:470} INFO - Processing files using up to 2 processes at a time 
+[2025-08-05T06:59:39.725+0000] {manager.py:471} INFO - Process each file at most once every 30 seconds
+[2025-08-05T06:59:39.725+0000] {manager.py:472} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-08-05T06:59:39.725+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-08-05T06:59:39.729+0000] {manager.py:740} INFO - There are 4 files in /opt/airflow/dags
+[2025-08-05T06:59:39.820+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/cleanup_paused_dags.py    186  0.03s             0           0
+/opt/airflow/dags/cleanup_logs.py                                  0           0
+/opt/airflow/dags/dag_generator.py          183  0.04s             0           0
+/opt/airflow/dags/processor/__init__.py                            0           0
+================================================================================
+[2025-08-05T07:00:09.947+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/processor/__init__.py                            0           0  1.49s           2025-08-05T06:59:41
+/opt/airflow/dags/cleanup_paused_dags.py                           1           0  0.56s           2025-08-05T06:59:40
+/opt/airflow/dags/cleanup_logs.py                                  1           0  0.50s           2025-08-05T06:59:40
+/opt/airflow/dags/dag_generator.py          224  0.01s             0           0  0.05s           2025-08-05T06:59:39
+================================================================================
+[2025-08-05T07:00:40.702+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_generator.py          290  0.01s             1           0  0.53s           2025-08-05T07:00:10
+/opt/airflow/dags/processor/__init__.py                            0           0  0.26s           2025-08-05T07:00:12
+/opt/airflow/dags/cleanup_logs.py                                  1           0  0.08s           2025-08-05T07:00:10
+/opt/airflow/dags/cleanup_paused_dags.py    293  0.00s             1           0  0.08s           2025-08-05T07:00:10
+================================================================================
+[2025-08-05T07:01:11.054+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                   PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/dag_generator.py                                 1           0  0.47s           2025-08-05T07:00:41
+/opt/airflow/dags/processor/__init__.py                            0           0  0.23s           2025-08-05T07:00:43
+/opt/airflow/dags/cleanup_logs.py           395  0.00s             1           0  0.11s           2025-08-05T07:00:40
+/opt/airflow/dags/cleanup_paused_dags.py    392  0.01s             1           0  0.09s           2025-08-05T07:00:40
+================================================================================
+[2025-08-05T07:01:11.771+0000] {manager.py:452} INFO - Exiting gracefully upon receiving signal 15
