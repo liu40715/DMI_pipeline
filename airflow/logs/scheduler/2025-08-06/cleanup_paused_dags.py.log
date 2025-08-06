@@ -1,0 +1,175 @@
+[2025-08-06T00:00:36.366+0000] {processor.py:161} INFO - Started process (PID=178) to work on /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:00:36.366+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/cleanup_paused_dags.py for tasks to queue
+[2025-08-06T00:00:36.367+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:00:36.367+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:00:36.374+0000] {processor.py:840} INFO - DAG(s) 'cleanup_paused_dags' retrieved from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:00:36.397+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:00:36.396+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-06T00:00:36.415+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:00:36.415+0000] {dag.py:3954} INFO - Setting next_dagrun for cleanup_paused_dags to 2025-08-06 00:00:00+00:00, run_after=2025-08-06 00:01:00+00:00
+[2025-08-06T00:00:36.433+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/cleanup_paused_dags.py took 0.071 seconds
+[2025-08-06T00:01:06.759+0000] {processor.py:161} INFO - Started process (PID=225) to work on /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:01:06.761+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/cleanup_paused_dags.py for tasks to queue
+[2025-08-06T00:01:06.763+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:01:06.763+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:01:06.775+0000] {processor.py:840} INFO - DAG(s) 'cleanup_paused_dags' retrieved from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:01:06.945+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:01:06.945+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-06T00:01:06.958+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:01:06.957+0000] {dag.py:3954} INFO - Setting next_dagrun for cleanup_paused_dags to 2025-08-06 00:01:00+00:00, run_after=2025-08-06 00:02:00+00:00
+[2025-08-06T00:01:06.969+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/cleanup_paused_dags.py took 0.216 seconds
+[2025-08-06T00:01:37.407+0000] {processor.py:161} INFO - Started process (PID=268) to work on /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:01:37.410+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/cleanup_paused_dags.py for tasks to queue
+[2025-08-06T00:01:37.411+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:01:37.411+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:01:37.418+0000] {processor.py:840} INFO - DAG(s) 'cleanup_paused_dags' retrieved from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:01:37.435+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:01:37.435+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-06T00:01:37.449+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:01:37.448+0000] {dag.py:3954} INFO - Setting next_dagrun for cleanup_paused_dags to 2025-08-06 00:01:00+00:00, run_after=2025-08-06 00:02:00+00:00
+[2025-08-06T00:01:37.462+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/cleanup_paused_dags.py took 0.060 seconds
+[2025-08-06T00:02:07.796+0000] {processor.py:161} INFO - Started process (PID=306) to work on /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:02:07.799+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/cleanup_paused_dags.py for tasks to queue
+[2025-08-06T00:02:07.800+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:02:07.800+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:02:07.808+0000] {processor.py:840} INFO - DAG(s) 'cleanup_paused_dags' retrieved from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:02:07.826+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:02:07.826+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-06T00:02:07.840+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:02:07.839+0000] {dag.py:3954} INFO - Setting next_dagrun for cleanup_paused_dags to 2025-08-06 00:02:00+00:00, run_after=2025-08-06 00:03:00+00:00
+[2025-08-06T00:02:07.850+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/cleanup_paused_dags.py took 0.057 seconds
+[2025-08-06T00:02:38.264+0000] {processor.py:161} INFO - Started process (PID=349) to work on /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:02:38.266+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/cleanup_paused_dags.py for tasks to queue
+[2025-08-06T00:02:38.267+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:02:38.266+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:02:38.274+0000] {processor.py:840} INFO - DAG(s) 'cleanup_paused_dags' retrieved from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:02:38.296+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:02:38.296+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-06T00:02:38.312+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:02:38.312+0000] {dag.py:3954} INFO - Setting next_dagrun for cleanup_paused_dags to 2025-08-06 00:02:00+00:00, run_after=2025-08-06 00:03:00+00:00
+[2025-08-06T00:02:38.328+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/cleanup_paused_dags.py took 0.069 seconds
+[2025-08-06T00:03:08.772+0000] {processor.py:161} INFO - Started process (PID=387) to work on /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:03:08.774+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/cleanup_paused_dags.py for tasks to queue
+[2025-08-06T00:03:08.776+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:03:08.775+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:03:08.785+0000] {processor.py:840} INFO - DAG(s) 'cleanup_paused_dags' retrieved from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:03:08.805+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:03:08.805+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-06T00:03:08.819+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:03:08.819+0000] {dag.py:3954} INFO - Setting next_dagrun for cleanup_paused_dags to 2025-08-06 00:03:00+00:00, run_after=2025-08-06 00:04:00+00:00
+[2025-08-06T00:03:08.832+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/cleanup_paused_dags.py took 0.066 seconds
+[2025-08-06T00:03:39.148+0000] {processor.py:161} INFO - Started process (PID=430) to work on /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:03:39.149+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/cleanup_paused_dags.py for tasks to queue
+[2025-08-06T00:03:39.151+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:03:39.151+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:03:39.162+0000] {processor.py:840} INFO - DAG(s) 'cleanup_paused_dags' retrieved from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:03:39.182+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:03:39.182+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-06T00:03:39.197+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:03:39.196+0000] {dag.py:3954} INFO - Setting next_dagrun for cleanup_paused_dags to 2025-08-06 00:03:00+00:00, run_after=2025-08-06 00:04:00+00:00
+[2025-08-06T00:03:39.209+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/cleanup_paused_dags.py took 0.067 seconds
+[2025-08-06T00:04:09.690+0000] {processor.py:161} INFO - Started process (PID=475) to work on /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:04:09.693+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/cleanup_paused_dags.py for tasks to queue
+[2025-08-06T00:04:09.695+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:04:09.694+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:04:09.702+0000] {processor.py:840} INFO - DAG(s) 'cleanup_paused_dags' retrieved from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:04:09.722+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:04:09.722+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-06T00:04:09.737+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:04:09.737+0000] {dag.py:3954} INFO - Setting next_dagrun for cleanup_paused_dags to 2025-08-06 00:04:00+00:00, run_after=2025-08-06 00:05:00+00:00
+[2025-08-06T00:04:09.748+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/cleanup_paused_dags.py took 0.064 seconds
+[2025-08-06T00:04:40.182+0000] {processor.py:161} INFO - Started process (PID=511) to work on /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:04:40.186+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/cleanup_paused_dags.py for tasks to queue
+[2025-08-06T00:04:40.187+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:04:40.187+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:04:40.197+0000] {processor.py:840} INFO - DAG(s) 'cleanup_paused_dags' retrieved from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:04:40.221+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:04:40.221+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-06T00:04:40.235+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:04:40.234+0000] {dag.py:3954} INFO - Setting next_dagrun for cleanup_paused_dags to 2025-08-06 00:04:00+00:00, run_after=2025-08-06 00:05:00+00:00
+[2025-08-06T00:04:40.247+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/cleanup_paused_dags.py took 0.071 seconds
+[2025-08-06T00:05:10.664+0000] {processor.py:161} INFO - Started process (PID=556) to work on /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:05:10.666+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/cleanup_paused_dags.py for tasks to queue
+[2025-08-06T00:05:10.668+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:05:10.667+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:05:10.680+0000] {processor.py:840} INFO - DAG(s) 'cleanup_paused_dags' retrieved from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:05:10.697+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:05:10.697+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-06T00:05:10.711+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:05:10.711+0000] {dag.py:3954} INFO - Setting next_dagrun for cleanup_paused_dags to 2025-08-06 00:05:00+00:00, run_after=2025-08-06 00:06:00+00:00
+[2025-08-06T00:05:10.724+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/cleanup_paused_dags.py took 0.066 seconds
+[2025-08-06T00:05:41.197+0000] {processor.py:161} INFO - Started process (PID=592) to work on /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:05:41.201+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/cleanup_paused_dags.py for tasks to queue
+[2025-08-06T00:05:41.202+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:05:41.201+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:05:41.208+0000] {processor.py:840} INFO - DAG(s) 'cleanup_paused_dags' retrieved from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:05:41.227+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:05:41.227+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-06T00:05:41.241+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:05:41.241+0000] {dag.py:3954} INFO - Setting next_dagrun for cleanup_paused_dags to 2025-08-06 00:05:00+00:00, run_after=2025-08-06 00:06:00+00:00
+[2025-08-06T00:05:41.254+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/cleanup_paused_dags.py took 0.063 seconds
+[2025-08-06T00:06:11.697+0000] {processor.py:161} INFO - Started process (PID=636) to work on /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:06:11.699+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/cleanup_paused_dags.py for tasks to queue
+[2025-08-06T00:06:11.701+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:06:11.701+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:06:11.715+0000] {processor.py:840} INFO - DAG(s) 'cleanup_paused_dags' retrieved from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:06:11.748+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:06:11.748+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-06T00:06:11.764+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:06:11.764+0000] {dag.py:3954} INFO - Setting next_dagrun for cleanup_paused_dags to 2025-08-06 00:06:00+00:00, run_after=2025-08-06 00:07:00+00:00
+[2025-08-06T00:06:11.779+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/cleanup_paused_dags.py took 0.088 seconds
+[2025-08-06T00:06:42.202+0000] {processor.py:161} INFO - Started process (PID=679) to work on /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:06:42.205+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/cleanup_paused_dags.py for tasks to queue
+[2025-08-06T00:06:42.206+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:06:42.206+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:06:42.213+0000] {processor.py:840} INFO - DAG(s) 'cleanup_paused_dags' retrieved from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:06:42.231+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:06:42.230+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-06T00:06:42.244+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:06:42.244+0000] {dag.py:3954} INFO - Setting next_dagrun for cleanup_paused_dags to 2025-08-06 00:06:00+00:00, run_after=2025-08-06 00:07:00+00:00
+[2025-08-06T00:06:42.259+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/cleanup_paused_dags.py took 0.061 seconds
+[2025-08-06T00:07:12.716+0000] {processor.py:161} INFO - Started process (PID=718) to work on /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:07:12.719+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/cleanup_paused_dags.py for tasks to queue
+[2025-08-06T00:07:12.721+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:07:12.721+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:07:12.730+0000] {processor.py:840} INFO - DAG(s) 'cleanup_paused_dags' retrieved from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:07:12.750+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:07:12.750+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-06T00:07:12.766+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:07:12.766+0000] {dag.py:3954} INFO - Setting next_dagrun for cleanup_paused_dags to 2025-08-06 00:07:00+00:00, run_after=2025-08-06 00:08:00+00:00
+[2025-08-06T00:07:12.777+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/cleanup_paused_dags.py took 0.067 seconds
+[2025-08-06T00:07:43.314+0000] {processor.py:161} INFO - Started process (PID=761) to work on /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:07:43.318+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/cleanup_paused_dags.py for tasks to queue
+[2025-08-06T00:07:43.320+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:07:43.319+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:07:43.331+0000] {processor.py:840} INFO - DAG(s) 'cleanup_paused_dags' retrieved from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:07:43.350+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:07:43.350+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-06T00:07:43.364+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:07:43.364+0000] {dag.py:3954} INFO - Setting next_dagrun for cleanup_paused_dags to 2025-08-06 00:07:00+00:00, run_after=2025-08-06 00:08:00+00:00
+[2025-08-06T00:07:43.379+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/cleanup_paused_dags.py took 0.069 seconds
+[2025-08-06T00:08:13.858+0000] {processor.py:161} INFO - Started process (PID=799) to work on /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:08:13.862+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/cleanup_paused_dags.py for tasks to queue
+[2025-08-06T00:08:13.865+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:08:13.864+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:08:13.874+0000] {processor.py:840} INFO - DAG(s) 'cleanup_paused_dags' retrieved from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:08:13.904+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:08:13.903+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-06T00:08:13.919+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:08:13.919+0000] {dag.py:3954} INFO - Setting next_dagrun for cleanup_paused_dags to 2025-08-06 00:08:00+00:00, run_after=2025-08-06 00:09:00+00:00
+[2025-08-06T00:08:13.934+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/cleanup_paused_dags.py took 0.083 seconds
+[2025-08-06T00:08:44.386+0000] {processor.py:161} INFO - Started process (PID=842) to work on /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:08:44.388+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/cleanup_paused_dags.py for tasks to queue
+[2025-08-06T00:08:44.389+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:08:44.389+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:08:44.398+0000] {processor.py:840} INFO - DAG(s) 'cleanup_paused_dags' retrieved from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:08:44.418+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:08:44.417+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-06T00:08:44.433+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:08:44.433+0000] {dag.py:3954} INFO - Setting next_dagrun for cleanup_paused_dags to 2025-08-06 00:08:00+00:00, run_after=2025-08-06 00:09:00+00:00
+[2025-08-06T00:08:44.448+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/cleanup_paused_dags.py took 0.070 seconds
+[2025-08-06T00:09:14.962+0000] {processor.py:161} INFO - Started process (PID=887) to work on /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:09:14.965+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/cleanup_paused_dags.py for tasks to queue
+[2025-08-06T00:09:14.967+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:09:14.967+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:09:14.978+0000] {processor.py:840} INFO - DAG(s) 'cleanup_paused_dags' retrieved from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:09:15.003+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:09:15.003+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-06T00:09:15.016+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:09:15.016+0000] {dag.py:3954} INFO - Setting next_dagrun for cleanup_paused_dags to 2025-08-06 00:09:00+00:00, run_after=2025-08-06 00:10:00+00:00
+[2025-08-06T00:09:15.029+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/cleanup_paused_dags.py took 0.071 seconds
+[2025-08-06T00:09:45.539+0000] {processor.py:161} INFO - Started process (PID=923) to work on /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:09:45.543+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/cleanup_paused_dags.py for tasks to queue
+[2025-08-06T00:09:45.544+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:09:45.544+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:09:45.550+0000] {processor.py:840} INFO - DAG(s) 'cleanup_paused_dags' retrieved from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:09:45.568+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:09:45.568+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-06T00:09:45.582+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:09:45.582+0000] {dag.py:3954} INFO - Setting next_dagrun for cleanup_paused_dags to 2025-08-06 00:09:00+00:00, run_after=2025-08-06 00:10:00+00:00
+[2025-08-06T00:09:45.594+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/cleanup_paused_dags.py took 0.061 seconds
+[2025-08-06T00:10:16.117+0000] {processor.py:161} INFO - Started process (PID=968) to work on /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:10:16.120+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/cleanup_paused_dags.py for tasks to queue
+[2025-08-06T00:10:16.122+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:10:16.122+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:10:16.129+0000] {processor.py:840} INFO - DAG(s) 'cleanup_paused_dags' retrieved from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:10:16.157+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:10:16.157+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-06T00:10:16.173+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:10:16.172+0000] {dag.py:3954} INFO - Setting next_dagrun for cleanup_paused_dags to 2025-08-06 00:10:00+00:00, run_after=2025-08-06 00:11:00+00:00
+[2025-08-06T00:10:16.195+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/cleanup_paused_dags.py took 0.083 seconds
+[2025-08-06T00:10:46.682+0000] {processor.py:161} INFO - Started process (PID=1004) to work on /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:10:46.684+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/cleanup_paused_dags.py for tasks to queue
+[2025-08-06T00:10:46.686+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:10:46.686+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:10:46.698+0000] {processor.py:840} INFO - DAG(s) 'cleanup_paused_dags' retrieved from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:10:46.724+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:10:46.724+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-06T00:10:46.744+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:10:46.744+0000] {dag.py:3954} INFO - Setting next_dagrun for cleanup_paused_dags to 2025-08-06 00:10:00+00:00, run_after=2025-08-06 00:11:00+00:00
+[2025-08-06T00:10:46.758+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/cleanup_paused_dags.py took 0.084 seconds
+[2025-08-06T00:11:17.229+0000] {processor.py:161} INFO - Started process (PID=1049) to work on /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:11:17.233+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/cleanup_paused_dags.py for tasks to queue
+[2025-08-06T00:11:17.234+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:11:17.234+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:11:17.244+0000] {processor.py:840} INFO - DAG(s) 'cleanup_paused_dags' retrieved from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:11:17.263+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:11:17.263+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-06T00:11:17.276+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:11:17.276+0000] {dag.py:3954} INFO - Setting next_dagrun for cleanup_paused_dags to 2025-08-06 00:11:00+00:00, run_after=2025-08-06 00:12:00+00:00
+[2025-08-06T00:11:17.290+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/cleanup_paused_dags.py took 0.066 seconds
+[2025-08-06T00:11:47.840+0000] {processor.py:161} INFO - Started process (PID=1092) to work on /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:11:47.843+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/cleanup_paused_dags.py for tasks to queue
+[2025-08-06T00:11:47.844+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:11:47.844+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:11:47.857+0000] {processor.py:840} INFO - DAG(s) 'cleanup_paused_dags' retrieved from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:11:47.884+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:11:47.884+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-06T00:11:47.898+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:11:47.898+0000] {dag.py:3954} INFO - Setting next_dagrun for cleanup_paused_dags to 2025-08-06 00:11:00+00:00, run_after=2025-08-06 00:12:00+00:00
+[2025-08-06T00:11:47.911+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/cleanup_paused_dags.py took 0.079 seconds
+[2025-08-06T00:12:18.430+0000] {processor.py:161} INFO - Started process (PID=1130) to work on /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:12:18.430+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/cleanup_paused_dags.py for tasks to queue
+[2025-08-06T00:12:18.432+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:12:18.432+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:12:18.443+0000] {processor.py:840} INFO - DAG(s) 'cleanup_paused_dags' retrieved from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:12:18.482+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:12:18.482+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-06T00:12:18.505+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:12:18.505+0000] {dag.py:3954} INFO - Setting next_dagrun for cleanup_paused_dags to 2025-08-06 00:12:00+00:00, run_after=2025-08-06 00:13:00+00:00
+[2025-08-06T00:12:18.537+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/cleanup_paused_dags.py took 0.113 seconds
+[2025-08-06T00:12:49.070+0000] {processor.py:161} INFO - Started process (PID=1173) to work on /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:12:49.070+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/cleanup_paused_dags.py for tasks to queue
+[2025-08-06T00:12:49.071+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:12:49.071+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:12:49.078+0000] {processor.py:840} INFO - DAG(s) 'cleanup_paused_dags' retrieved from /opt/airflow/dags/cleanup_paused_dags.py
+[2025-08-06T00:12:49.096+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:12:49.095+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-08-06T00:12:49.110+0000] {logging_mixin.py:188} INFO - [2025-08-06T00:12:49.110+0000] {dag.py:3954} INFO - Setting next_dagrun for cleanup_paused_dags to 2025-08-06 00:12:00+00:00, run_after=2025-08-06 00:13:00+00:00
+[2025-08-06T00:12:49.123+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/cleanup_paused_dags.py took 0.057 seconds
