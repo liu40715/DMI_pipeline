@@ -12,6 +12,7 @@ def create_dag_from_config(config: dict) -> DAG:
     # 處理start_date
     start_date_str = config.get('start_date', '2023-01-01')
     start_date = datetime.strptime(start_date_str, '%Y-%m-%d')
+    owner = config.get('owner', 'default_owner')
     
     with DAG(
         dag_id=config['dag_id'],
@@ -20,6 +21,7 @@ def create_dag_from_config(config: dict) -> DAG:
         catchup=config.get('catchup', False),
         doc_md="從Web API動態生成的DAG",
         tags=['workflow'],
+        default_args={"owner": owner},
     ) as dag:
         
         tasks = {}
@@ -91,7 +93,7 @@ def load_dag_configs():
             port=5432
         )
         cur = conn.cursor()
-        cur.execute("SELECT dag_id, schedule_interval, start_date, catchup, tasks FROM dags_backend;")
+        cur.execute("SELECT dag_id, schedule_interval, start_date, catchup, owner, tasks FROM dags_backend;")
         rows = cur.fetchall()
         columns = [desc[0] for desc in cur.description]
         for row in rows:

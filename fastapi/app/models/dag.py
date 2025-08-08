@@ -8,4 +8,5 @@ class DAGModel(Base):
     schedule_interval = Column(String, nullable=False)
     start_date = Column(String, nullable=False)
     catchup = Column(Boolean, nullable=False)
+    owner = Column(String, nullable=False)
     tasks = Column(JSON, nullable=False)

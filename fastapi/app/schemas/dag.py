@@ -6,6 +6,7 @@ class DAG(BaseModel):
     schedule_interval: str
     start_date: str
     catchup: bool
+    owner: str
     tasks: List[Dict[str, Any]]
 
     class Config:

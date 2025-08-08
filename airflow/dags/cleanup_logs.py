@@ -11,7 +11,7 @@ AIRFLOW_LOG_DIR = "/opt/airflow/logs"  # 或 '/home/airflow/airflow/logs' 等
 LOG_RETENTION_DAYS = 7
 
 default_args = {
-    'owner': 'airflow',
+    'owner': 'admin',
     'depends_on_past': False,
     'start_date': datetime(2023, 1, 1),
     'retries': 1,

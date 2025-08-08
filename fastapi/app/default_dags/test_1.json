@@ -3,6 +3,7 @@
   "schedule_interval": "@once",
   "start_date": "2025-06-25",
   "catchup": false,
+  "owner": "test",
   "tasks": [
     {
       "task_id": "extract_data_task",
