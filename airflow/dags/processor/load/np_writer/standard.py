@@ -10,12 +10,12 @@ def execute(data, output_filename, **kwargs):
     """標準 NumPy 寫出方法"""
     try:
         # 如果輸入是 parquet 格式，先轉換為 numpy
-        if hasattr(data, 'read'):
-            df = pd.read_parquet(data)
-            np_data = df.to_numpy()
-        else:
-            np_data = np.load(data, allow_pickle=True)
-        
+        #if hasattr(data, 'read'):
+        #    df = pd.read_parquet(data)
+        #    np_data = df.to_numpy()
+        #else:
+        #    np_data = np.load(data, allow_pickle=True)
+        np_data = np.load(data, allow_pickle=True)
         output_path = Path('/opt/airflow/data/output') / output_filename
         output_path.parent.mkdir(parents=True, exist_ok=True)
         np.save(output_path, np_data)

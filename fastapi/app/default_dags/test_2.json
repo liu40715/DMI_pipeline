@@ -1,0 +1,42 @@
+  {
+    "dag_id": "template_dag_bbbb",
+    "schedule_interval": "@once",
+    "start_date": "2025-06-25",
+    "catchup": false,
+    "owner": "test",
+    "tasks": [
+      {
+        "task_id": "extract_data_task",
+        "operator": "PythonOperator",
+        "processor_stage": "extract",
+        "processor_method": "np_reader.standard",
+        "op_kwargs": {
+          "input_filename": "test.npy"
+        }
+      },
+      {
+        "task_id": "transform_data_task",
+        "operator": "PythonOperator",
+        "processor_stage": "transform",
+        "processor_method": "array_processing.add_test",
+        "op_kwargs": {
+          "number": 2
+        },
+        "dependencies": [
+          "extract_data_task"
+        ]
+      },
+      {
+        "task_id": "load_data_task",
+        "operator": "PythonOperator",
+        "processor_stage": "load",
+        "processor_method": "np_writer.standard",
+        "op_kwargs": {
+          "output_filename": "test_output.csv"
+        },
+        "dependencies": [
+          "transform_data_task"
+        ]
+      }
+    ]
+  }

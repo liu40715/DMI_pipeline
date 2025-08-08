@@ -4,12 +4,11 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-def execute(data, multiplier=1.0, **kwargs):
+def execute(data: list, multiplier: int=1, **kwargs) -> pd.DataFrame:
     """產品聚合分析方法"""
     try:
         data = data[0]
         df = pd.read_parquet(data)
-        
         # 基礎聚合邏輯
         df['total_price'] = df['quantity'] * df['price'] * multiplier
         grouped = df.groupby(['product_id', 'product_name']).agg(
