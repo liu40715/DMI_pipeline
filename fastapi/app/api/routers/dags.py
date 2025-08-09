@@ -87,7 +87,7 @@ def read_dag(dag_id: str, db: Session = Depends(get_db), user=Depends(get_curren
     headers = {"Content-Type": "application/json"}
     auth = HTTPBasicAuth("admin", "admin")
     # Step 1: 查詢所有 dagRuns，取得最後一筆 dag_run_id
-    url_runs = f"http://172.20.10.10:8080/api/v1/dags/{dag_id}/dagRuns"
+    url_runs = f"http://airflow:8080/api/v1/dags/{dag_id}/dagRuns"
     resp = requests.get(url_runs, headers=headers, auth=auth, timeout=5)
     resp.raise_for_status()
     dag_runs = resp.json().get("dag_runs", [])
@@ -95,7 +95,7 @@ def read_dag(dag_id: str, db: Session = Depends(get_db), user=Depends(get_curren
         return []  # 沒有就回空 list
     last_dag_run_id = dag_runs[-1]["dag_run_id"]
     # Step 2: 查詢最後這個 dag_run 的所有 task instance 狀態
-    url_tasks = f"http://172.20.10.10:8080/api/v1/dags/{dag_id}/dagRuns/{last_dag_run_id}/taskInstances"
+    url_tasks = f"http://airflow:8080/api/v1/dags/{dag_id}/dagRuns/{last_dag_run_id}/taskInstances"
     resp = requests.get(url_tasks, headers=headers, auth=auth, timeout=5)
     resp.raise_for_status()
     task_instances = resp.json().get("task_instances", [])
@@ -128,7 +128,7 @@ def update_dag(
         logger.error(f"DB update error for DAG {dag_id}: {e}")
         raise HTTPException(status_code=500, detail="Update failed")
 
-    airflow_url = f"http://172.20.10.10:8080/api/v1/dags/{dag_id}/dagRuns"
+    airflow_url = f"http://airflow:8080/api/v1/dags/{dag_id}/dagRuns"
     try:
         resp = requests.post(
             airflow_url,
@@ -157,7 +157,7 @@ def delete_dag(
         raise HTTPException(status_code=404, detail="DAG not found")
 
 
-    airflow_url = f"http://172.20.10.10:8080/api/v1/dags/{dag_id}?update_mask=is_paused"
+    airflow_url = f"http://airflow:8080/api/v1/dags/{dag_id}?update_mask=is_paused"
     try:
         resp = requests.patch(
             airflow_url,
