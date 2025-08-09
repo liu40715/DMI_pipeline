@@ -12,7 +12,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Redis 連線設定
-redis_client = redis.StrictRedis(host='172.20.10.10', port=6379, db=0, decode_responses=False)
+redis_client = redis.StrictRedis(host='redis', port=6379, db=0, decode_responses=False)
 REDIS_PREFIX = 'airflow_data:'
 
 def _get_redis_key(ti_or_key) -> str:
