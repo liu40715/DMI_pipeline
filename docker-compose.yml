@@ -3,6 +3,7 @@ version: '3.8'
 services:
   postgres:
     image: postgres:13
+    container_name: dmi-postgres
     environment:
       POSTGRES_USER: airflow
       POSTGRES_PASSWORD: airflow
@@ -21,7 +22,7 @@ services:
   airflow:
     build:
       context: ./airflow
-    image: my-airflow:latest
+    image: dmi-airflow:latest
     user: "0:0"
     environment:
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
@@ -44,7 +45,7 @@ services:
   fastapi:
     build:
       context: ./fastapi
-    container_name: my-fastapi
+    container_name: dmi-fastapi
     restart: always
     environment:
       - DATABASE_URL=postgresql://airflow:airflow@postgres:5432/airflow
@@ -58,14 +59,14 @@ services:
 
   adminer:
     image: adminer
-    container_name: my-adminer
+    container_name: dmi-adminer
     restart: always
     ports:
       - "8081:8080"
 
   redis:
     image: redis:alpine
-    container_name: my-redis
+    container_name: dmi-redis
     restart: always
     ports:
       - "6379:6379"

@@ -12,7 +12,8 @@
         "processor_method": "np_reader.standard",
         "op_kwargs": {
           "input_filename": "test.npy"
-        }
+        },
+        "position": {"x":123,"y":456}
       },
       {
         "task_id": "transform_data_task",
@@ -24,7 +25,8 @@
         },
         "dependencies": [
           "extract_data_task"
-        ]
+        ],
+        "position": {"x":123,"y":456}
       },
       {
         "task_id": "load_data_task",
@@ -36,7 +38,8 @@
         },
         "dependencies": [
           "transform_data_task"
-        ]
+        ],
+        "position": {"x":123,"y":456}
       }
     ]
   }
