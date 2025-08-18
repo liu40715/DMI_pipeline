@@ -103,7 +103,7 @@ def extract_data(ti, algorithm_module: str = "processor.extract", algorithm_func
             raise TypeError("Unsupported data type")
         
         redis_key = _get_redis_key(ti)
-        redis_client.set(redis_key, data_bytes)
+        redis_client.set(redis_key, data_bytes, ex=60)
         logger.info(f"資料已存入 Redis，key={redis_key}")
         
         ti.xcom_push(key=OUTPUT_PATH_XCOM_KEY, value=redis_key)
@@ -159,18 +159,18 @@ def transform_data(ti, algorithm_module="processor.transform", algorithm_func="p
             raise TypeError("Unsupported data type")
         
         redis_key_out = _get_redis_key(ti)
-        redis_client.set(redis_key_out, data_bytes)
+        redis_client.set(redis_key_out, data_bytes, ex=60)
         logger.info(f"轉換後資料已存入 Redis，key={redis_key_out}")
         
         # 清理上游數據
-        if isinstance(upstream_redis_keys, list):
-            for key in upstream_redis_keys:
-                redis_client.delete(key)
-                logger.info(f"刪除上游 Redis key: {key}")
-        else:
-            redis_client.delete(upstream_redis_keys)
-            logger.info(f"刪除上游 Redis key: {upstream_redis_keys}")
-        
+        #if isinstance(upstream_redis_keys, list):
+        #    for key in upstream_redis_keys:
+        #        #redis_client.delete(key)
+        #        logger.info(f"刪除上游 Redis key: {key}")
+        #else:
+        #    #redis_client.delete(upstream_redis_keys)
+        #    logger.info(f"刪除上游 Redis key: {upstream_redis_keys}")
+        #
         ti.xcom_push(key=OUTPUT_PATH_XCOM_KEY, value=redis_key_out)
         
     except Exception as e:
