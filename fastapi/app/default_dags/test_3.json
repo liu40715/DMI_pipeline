@@ -8,7 +8,7 @@
       {
         "task_id": "extract_data_task",
         "operator": "PythonOperator",
-        "processor_stage": "extract",
+        "processor_stage": "input",
         "processor_method": "np_reader.standard",
         "op_kwargs": {
           "input_filename": "test.npy"
@@ -174,7 +174,7 @@
       {
         "task_id": "load_data_task1",
         "operator": "PythonOperator",
-        "processor_stage": "load",
+        "processor_stage": "output",
         "processor_method": "np_writer.standard",
         "op_kwargs": {
           "output_filename": "test_output.csv"
@@ -187,7 +187,7 @@
       {
         "task_id": "load_data_task2",
         "operator": "PythonOperator",
-        "processor_stage": "load",
+        "processor_stage": "output",
         "processor_method": "np_writer.standard",
         "op_kwargs": {
           "output_filename": "test_output.csv"

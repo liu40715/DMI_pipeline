@@ -76,7 +76,7 @@ def _get_upstream_output_path(ti):
     logger.info(f"拉取到的 redis_key: {pulled_str}")
     return pulled_str
 
-def extract_data(ti, algorithm_module: str = "processor.extract", algorithm_func: str = "csv_reader.standard", **algo_kwargs):
+def input_data(ti, algorithm_module: str = "processor.extract", algorithm_func: str = "csv_reader.standard", **algo_kwargs):
     """數據提取函數 - 強制要求資料夾結構格式"""
     try:
         logger.info("執行 extract_data (資料載入層)")
@@ -177,7 +177,7 @@ def transform_data(ti, algorithm_module="processor.transform", algorithm_func="p
         logger.error(f"transform_data 發生例外: {e}")
         raise
 
-def load_data(ti, algorithm_module: str = "processor.load", algorithm_func: str = "csv_writer.standard", **algo_kwargs):
+def output_data(ti, algorithm_module: str = "processor.load", algorithm_func: str = "csv_writer.standard", **algo_kwargs):
     """數據載入函數 - 強制要求資料夾結構格式"""
     try:
         logger.info("執行 load_data (資料匯入層)")
