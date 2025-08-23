@@ -9,6 +9,7 @@ from app.api.routers import auth, dags
 from app.db.session import SessionLocal
 from app.models.user import User
 from app.security import get_password_hash
+from fastapi.middleware.cors import CORSMiddleware
 
 def ensure_admin_user():
     db = SessionLocal()
@@ -37,3 +38,15 @@ app = FastAPI(title="DMI pipeline builder")
 app.include_router(auth.router)
 app.include_router(dags.router)
 
+origins = [
+    "http://localhost",
+    "http://localhost:8080",
+    "https://localhost:3000"
+]
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
