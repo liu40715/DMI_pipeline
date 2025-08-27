@@ -3,7 +3,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-def execute(data: list, type: str ="hanning", **kwargs) -> np.ndarray:
+def execute(data: np.ndarray, type: str ="hanning", **kwargs) -> np.ndarray:
     """
     窗函數：將時域訊號套上窗函數以減少頻譜洩漏，其在訊號的開始和結束處平滑地降低訊號強度
     
@@ -18,9 +18,6 @@ def execute(data: list, type: str ="hanning", **kwargs) -> np.ndarray:
         Exception: 當處理過程發生錯誤時
     """
     try:
-        buffer = data[0]              # data[0] 已經是 BytesIO 物件，不用包
-        buffer.seek(0)                # 確保指標從開頭開始
-        data = np.load(buffer)         # 獲得array格式
         logger.info(f" 窗函數類型: {type}")
         # 參數檢查
         if not isinstance(data, np.ndarray):

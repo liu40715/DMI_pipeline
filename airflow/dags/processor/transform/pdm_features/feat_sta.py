@@ -5,7 +5,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-def execute(data: list, **kwargs) -> pd.DataFrame:
+def execute(data: np.ndarray, alias: str = "", **kwargs) -> pd.DataFrame:
     """
     統計特徵函數：將信號進行統計特徵提取
 
@@ -22,9 +22,6 @@ def execute(data: list, **kwargs) -> pd.DataFrame:
         Exception: 當處理過程發生錯誤時
     """
     try:
-        buffer = data[0]              # data[0] 已經是 BytesIO 物件，不用包
-        buffer.seek(0)                # 確保指標從開頭開始
-        data = np.load(buffer, allow_pickle=True)         # 獲得array格式
         # 參數檢查
         if not isinstance(data, np.ndarray):
             raise ValueError("data 必須是 numpy 陣列")
@@ -56,8 +53,8 @@ def execute(data: list, **kwargs) -> pd.DataFrame:
                 subband_features = _calculate_statistical_features(subband_coeffs)
                 # 為特徵名稱添加子帶前綴
                 for key, value in subband_features.items():
-                    features[f"subband_{i}_{key}"] = value
-                
+                    #features[f"subband_{i}_{key}"] = value
+                    features[f"{alias}_subband_{i}_{key}" if alias else f"subband_{i}_{key}"] = value
                 processed_subbands += 1
             
             if processed_subbands == 0:
@@ -78,6 +75,7 @@ def execute(data: list, **kwargs) -> pd.DataFrame:
                 data = data.flatten()
             # 計算統計特徵
             features = _calculate_statistical_features(data)
+            features = {f"{alias}_{k}" if alias else k: v for k, v in features.items()}
             df = pd.DataFrame(list(features.items()), columns=["Feature", "Value"])
             return df
         else:

@@ -10,8 +10,13 @@ def execute(input_filename: str, **kwargs):
     try:
         input_path = Path('/opt/airflow/data/input') / input_filename
         data = np.load(input_path)
-        logger.info(f"成功讀取 NumPy: {input_filename}, 資料形狀: {data.shape}")
-        return data
+        dict_data = {
+          "tag1":data,
+          "tag2":data,
+          "tag3":data
+        }
+        logger.info(f"成功讀取 NumPy: {input_filename}")
+        return dict_data
     except Exception as e:
         logger.error(f"NumPy 讀取失敗: {e}")
         raise

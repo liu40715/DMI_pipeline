@@ -3,7 +3,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-def execute(data: list, fs: float, type: str, **kwargs) -> np.ndarray:
+def execute(data: np.ndarray, fs: float, type: str, **kwargs) -> np.ndarray:
 
     """
     訊號處理函數：將時域訊號切成三等份，做混疊or平均處理
@@ -20,9 +20,6 @@ def execute(data: list, fs: float, type: str, **kwargs) -> np.ndarray:
     """
 
     try:
-        buffer = data[0]              # data[0] 已經是 BytesIO 物件，不用包
-        buffer.seek(0)                # 確保指標從開頭開始
-        data = np.load(buffer)         # 獲得array格式
         logger.info(f" 採樣頻率: {fs},  處理類型: {type}")
         # 參數檢查
         if not isinstance(data, np.ndarray):

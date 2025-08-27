@@ -76,6 +76,41 @@ def _get_upstream_output_path(ti):
     logger.info(f"拉取到的 redis_key: {pulled_str}")
     return pulled_str
 
+def _serialize_value(v):
+    buf = io.BytesIO()
+    if isinstance(v, np.ndarray):
+        logger.info("儲存資料格式為 numpy.ndarray")
+        np.save(buf, v)
+    elif isinstance(v, pd.DataFrame):
+        logger.info("儲存資料格式為 pd.DataFrame")
+        v.to_parquet(buf, index=False)
+    else:
+        raise TypeError("不支援的資料格式")
+    return buf.getvalue()
+
+def _store_dict_to_redis_hash(redis_key, data_dict):
+    try:
+        mapping = {k: _serialize_value(v) for k, v in data_dict.items()}
+        redis_client.hset(redis_key, mapping=mapping)
+        redis_client.expire(redis_key, 60)
+        logger.info(f"資料已存入 Redis，key={redis_key}")
+    except Exception as e:
+        logger.error(f"儲存錯誤: {e}")
+
+def _load_dict_from_redis_hash(redis_key):
+    logger.info(f"從 Redis 讀取資料:key={redis_key}")
+    stored = redis_client.hgetall(redis_key)
+    data_dict = {}
+    for k, v_bytes in stored.items():
+        buf = io.BytesIO(v_bytes)
+        try:
+            buf.seek(0)
+            data_dict[k] = np.load(buf, allow_pickle=True)
+        except Exception:
+            buf.seek(0)
+            data_dict[k] = pd.read_parquet(buf)
+    return data_dict
+
 def input_data(ti, algorithm_module: str = "processor.extract", algorithm_func: str = "csv_reader.standard", **algo_kwargs):
     """數據提取函數 - 強制要求資料夾結構格式"""
     try:
@@ -85,26 +120,9 @@ def input_data(ti, algorithm_module: str = "processor.extract", algorithm_func: 
         func = _get_algorithm_function(algorithm_module, algorithm_func)
         logger.info(f"呼叫方法 '{algorithm_func}' 來自模組 '{algorithm_module}'")
         
-        data = func(**algo_kwargs)
-        
-        # 序列化數據
-        if isinstance(data, np.ndarray):
-            logger.info("資料是 numpy.ndarray")
-            buf = io.BytesIO()
-            np.save(buf, data)
-            data_bytes = buf.getvalue()
-        elif isinstance(data, pd.DataFrame):
-            logger.info("資料是 pd.DataFrame")
-            buf = io.BytesIO()
-            data.to_parquet(buf, index=False)
-            data_bytes = buf.getvalue()
-        else:
-            logger.error("無法辨識資料格式，無法轉存")
-            raise TypeError("Unsupported data type")
-        
+        dict_data = func(**algo_kwargs)
         redis_key = _get_redis_key(ti)
-        redis_client.set(redis_key, data_bytes, ex=60)
-        logger.info(f"資料已存入 Redis，key={redis_key}")
+        _store_dict_to_redis_hash(redis_key,dict_data)
         
         ti.xcom_push(key=OUTPUT_PATH_XCOM_KEY, value=redis_key)
         
@@ -122,44 +140,24 @@ def transform_data(ti, algorithm_module="processor.transform", algorithm_func="p
         if not upstream_redis_keys:
             raise RuntimeError("無法取得上游任務的 redis_key")
         
-        data_list = []
-        if isinstance(upstream_redis_keys, list):
-            for key in upstream_redis_keys:
-                data_bytes = redis_client.get(key)
-                if not data_bytes:
-                    raise RuntimeError(f"Redis 無資料，key={key}")
-                data = io.BytesIO(data_bytes)
-                data_list.append(data)
-            logger.info(f"已從多個上游合併資料，共 {len(data_list)} 筆")
-        else:
-            data_bytes = redis_client.get(upstream_redis_keys)
-            if not data_bytes:
-                raise RuntimeError(f"Redis 無資料，key={upstream_redis_keys}")
-            data_list = [io.BytesIO(data_bytes)]
-        
         # 直接使用資料夾結構
         func = _get_algorithm_function(algorithm_module, algorithm_func)
         logger.info(f"呼叫方法 '{algorithm_func}' 來自模組 '{algorithm_module}'")
-        
-        processed_data = func(data_list, **algo_kwargs)
-        
-        # 序列化處理後的數據
-        if isinstance(processed_data, np.ndarray):
-            logger.info("資料是 numpy.ndarray")
-            buf = io.BytesIO()
-            np.save(buf, processed_data)
-            data_bytes = buf.getvalue()
-        elif isinstance(processed_data, pd.DataFrame):
-            logger.info("資料是 pd.DataFrame")
-            buf = io.BytesIO()
-            processed_data.to_parquet(buf, index=False)
-            data_bytes = buf.getvalue()
+
+        data_list = []
+        if isinstance(upstream_redis_keys, list):
+            pass
+            # for key in upstream_redis_keys:
+            #     dict_data = _load_dict_from_redis_hash(key)
+            #     data_list.append(dict_data)
+            
+            # proc_dict_data  = {k: func(v, **algo_kwargs) for k, v in dict_data.items()}
         else:
-            logger.error("無法辨識資料格式，無法轉存")
-            raise TypeError("Unsupported data type")
-        
+            dict_data = _load_dict_from_redis_hash(upstream_redis_keys)
+            logger.info(f"Tags 名稱: {dict_data.keys()}")
+            proc_dict_data  = {k: func(v, **algo_kwargs) for k, v in dict_data.items()}
         redis_key_out = _get_redis_key(ti)
-        redis_client.set(redis_key_out, data_bytes, ex=60)
+        _store_dict_to_redis_hash(redis_key_out,proc_dict_data)
         logger.info(f"轉換後資料已存入 Redis，key={redis_key_out}")
         
         # 清理上游數據
@@ -170,7 +168,7 @@ def transform_data(ti, algorithm_module="processor.transform", algorithm_func="p
         #else:
         #    #redis_client.delete(upstream_redis_keys)
         #    logger.info(f"刪除上游 Redis key: {upstream_redis_keys}")
-        #
+        
         ti.xcom_push(key=OUTPUT_PATH_XCOM_KEY, value=redis_key_out)
         
     except Exception as e:
@@ -183,33 +181,38 @@ def output_data(ti, algorithm_module: str = "processor.load", algorithm_func: st
         logger.info("執行 load_data (資料匯入層)")
         
         # 獲取上游數據
-        upstream_redis_key = _get_upstream_output_path(ti)
-        if isinstance(upstream_redis_key, list):
-            if len(upstream_redis_key) == 0:
-                raise RuntimeError("load_data 中上游無 redis_key")
-            upstream_redis_key = upstream_redis_key[0]
-            logger.warning(f"load_data 有多個上游 redis_key，暫用第一筆: {upstream_redis_key}")
-        
-        if not upstream_redis_key:
+        upstream_redis_keys = _get_upstream_output_path(ti)
+        if not upstream_redis_keys:
             raise RuntimeError("load_data 無法從上游取得 redis_key")
-        
-        logger.info(f"從 Redis 讀取資料，key={upstream_redis_key}")
-        data_bytes = redis_client.get(upstream_redis_key)
-        if not data_bytes:
-            raise RuntimeError(f"Redis 無資料，key={upstream_redis_key}")
-        
-        data = io.BytesIO(data_bytes)
-        
+
         # 直接使用資料夾結構
         func = _get_algorithm_function(algorithm_module, algorithm_func)
         logger.info(f"呼叫方法 '{algorithm_func}' 來自模組 '{algorithm_module}'")
         
-        func(data, **algo_kwargs)
-        
-        # 清理上游數據
-        redis_client.delete(upstream_redis_key)
-        logger.info(f"刪除上游 Redis key: {upstream_redis_key}")
+        if isinstance(upstream_redis_keys, list):
+            data_list = []
+            for key in upstream_redis_keys:
+                dict_data = _load_dict_from_redis_hash(key)
+                if not isinstance(dict_data, dict):
+                    logger.error(f"取得的資料不是 dict，實際型態 {type(dict_data)}")
+                data_list.append(dict_data)
+   
+            all_keys = set().union(*(d.keys() for d in data_list))
+            result_dict = {
+                key: pd.concat([d[key] for d in data_list if key in d], ignore_index=True)
+                for key in all_keys
+            }
+            logger.info(f"合併結果欄位: {list(result_dict.keys())}")
+            func(result_dict, **algo_kwargs)
+        else:
+            dict_data = _load_dict_from_redis_hash(upstream_redis_keys)
+            func(dict_data, **algo_kwargs)
+
+        # # 清理上游數據
+        # redis_client.delete(upstream_redis_key)
+        # logger.info(f"刪除上游 Redis key: {upstream_redis_key}")
         
     except Exception as e:
         logger.error(f"load_data 發生例外: {e}")
         raise
+

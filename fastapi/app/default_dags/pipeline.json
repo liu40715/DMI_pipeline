@@ -1,5 +1,5 @@
 {
-  "dag_id": "template_dag_final33",
+  "dag_id": "template_dag_pipeline1",
   "schedule_interval": "@once",
   "start_date": "2025-06-25",
   "catchup": false,
@@ -74,7 +74,7 @@
       "operator": "PythonOperator",
       "processor_stage": "transform",
       "processor_method": "pdm_features.feat_sta",
-      "op_kwargs": {},
+      "op_kwargs": {"alias":"111"},
       "dependencies": [
         "transform_data_task3"
       ],
@@ -118,7 +118,7 @@
       "operator": "PythonOperator",
       "processor_stage": "transform",
       "processor_method": "pdm_features.feat_sta",
-      "op_kwargs": {},
+      "op_kwargs": {"alias":"333"},
       "dependencies": [
         "transform_data_task5"
       ],
@@ -132,7 +132,7 @@
       "operator": "PythonOperator",
       "processor_stage": "transform",
       "processor_method": "pdm_features.feat_sta",
-      "op_kwargs": {},
+      "op_kwargs": {"alias":"222"},
       "dependencies": [
         "transform_data_task6"
       ],
@@ -162,7 +162,7 @@
       "operator": "PythonOperator",
       "processor_stage": "transform",
       "processor_method": "pdm_features.feat_sta",
-      "op_kwargs": {},
+      "op_kwargs": {"alias":"333"},
       "dependencies": [
         "transform_data_task9"
       ],
@@ -190,7 +190,7 @@
       "operator": "PythonOperator",
       "processor_stage": "transform",
       "processor_method": "pdm_features.feat_sta",
-      "op_kwargs": {},
+      "op_kwargs": {"alias":"555"},
       "dependencies": [
         "transform_data_task11"
       ],
@@ -228,7 +228,8 @@
           "BPFI": 7.5303,
           "BSF": 2.6805,
           "FTF": 0.4064
-        }
+        },
+        "alias":"444"
       },
       "dependencies": [
         "transform_data_task13"
@@ -274,7 +275,7 @@
       "operator": "PythonOperator",
       "processor_stage": "transform",
       "processor_method": "pdm_features.feat_sta",
-      "op_kwargs": {},
+      "op_kwargs": {"alias":"777"},
       "dependencies": [
         "transform_data_task16"
       ],
@@ -306,7 +307,8 @@
       "processor_method": "pdm_features.feat_spec",
       "op_kwargs": {
         "fs": 6400,
-        "rpm": 1200
+        "rpm": 1200,
+        "alias":"888"
       },
       "dependencies": [
         "transform_data_task18"
@@ -325,119 +327,8 @@
         "output_filename": "test_output.csv"
       },
       "dependencies": [
-        "transform_data_task19"
-      ],
-      "position": {
-        "x": 123,
-        "y": 456
-      }
-    },
-    {
-      "task_id": "load_data_task2",
-      "operator": "PythonOperator",
-      "processor_stage": "output",
-      "processor_method": "csv_writer.standard",
-      "op_kwargs": {
-        "output_filename": "test_output2.csv"
-      },
-      "dependencies": [
-        "transform_data_task17"
-      ],
-      "position": {
-        "x": 123,
-        "y": 456
-      }
-    },
-    {
-      "task_id": "load_data_task3",
-      "operator": "PythonOperator",
-      "processor_stage": "output",
-      "processor_method": "csv_writer.standard",
-      "op_kwargs": {
-        "output_filename": "test_output3.csv"
-      },
-      "dependencies": [
-        "transform_data_task7"
-      ],
-      "position": {
-        "x": 123,
-        "y": 456
-      }
-    },
-    {
-      "task_id": "load_data_task4",
-      "operator": "PythonOperator",
-      "processor_stage": "output",
-      "processor_method": "csv_writer.standard",
-      "op_kwargs": {
-        "output_filename": "test_output4.csv"
-      },
-      "dependencies": [
-        "transform_data_task12"
-      ],
-      "position": {
-        "x": 123,
-        "y": 456
-      }
-    },
-    {
-      "task_id": "load_data_task5",
-      "operator": "PythonOperator",
-      "processor_stage": "output",
-      "processor_method": "csv_writer.standard",
-      "op_kwargs": {
-        "output_filename": "test_output5.csv"
-      },
-      "dependencies": [
-        "transform_data_task14"
-      ],
-      "position": {
-        "x": 123,
-        "y": 456
-      }
-    },
-    {
-      "task_id": "load_data_task6",
-      "operator": "PythonOperator",
-      "processor_stage": "output",
-      "processor_method": "csv_writer.standard",
-      "op_kwargs": {
-        "output_filename": "test_output6.csv"
-      },
-      "dependencies": [
-        "transform_data_task10"
-      ],
-      "position": {
-        "x": 123,
-        "y": 456
-      }
-    },
-    {
-      "task_id": "load_data_task7",
-      "operator": "PythonOperator",
-      "processor_stage": "output",
-      "processor_method": "csv_writer.standard",
-      "op_kwargs": {
-        "output_filename": "test_output7.csv"
-      },
-      "dependencies": [
-        "transform_data_task8"
-      ],
-      "position": {
-        "x": 123,
-        "y": 456
-      }
-    },
-    {
-      "task_id": "load_data_task8",
-      "operator": "PythonOperator",
-      "processor_stage": "output",
-      "processor_method": "csv_writer.standard",
-      "op_kwargs": {
-        "output_filename": "test_output8.csv"
-      },
-      "dependencies": [
-        "transform_data_task4"
+        "transform_data_task4","transform_data_task7","transform_data_task8","transform_data_task10","transform_data_task12","transform_data_task17",
+        "transform_data_task14","transform_data_task19"
       ],
       "position": {
         "x": 123,

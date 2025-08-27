@@ -5,7 +5,7 @@ from scipy.signal import firwin, filtfilt
 logger = logging.getLogger(__name__)
 
 
-def execute(data: list, fs: float, rpm: float, **kwargs) -> np.ndarray:
+def execute(data: np.ndarray, fs: float, rpm: float, **kwargs) -> np.ndarray:
     """
     包絡轉換函數：將訊號進行希爾伯特變換以獲得包絡線
 
@@ -21,9 +21,6 @@ def execute(data: list, fs: float, rpm: float, **kwargs) -> np.ndarray:
         Exception: 當處理過程發生錯誤時
     """
     try:
-        buffer = data[0]              # data[0] 已經是 BytesIO 物件，不用包
-        buffer.seek(0)                # 確保指標從開頭開始
-        data = np.load(buffer)         # 獲得array格式
         # 參數檢查
         if not isinstance(data, np.ndarray):
             raise ValueError("data 必須是 numpy 陣列")

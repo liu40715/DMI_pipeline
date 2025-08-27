@@ -4,7 +4,7 @@ import pandas as pd
 logger = logging.getLogger(__name__)
 
 
-def execute(data: list, fs: float, rpm: float, Bearing: dict = None, **kwargs) -> dict:
+def execute(data: np.ndarray, fs: float, rpm: float, Bearing: dict = None, alias: str = "", **kwargs) -> pd.DataFrame:
     """
     頻域特徵函數：將頻域信號進行缺陷頻域特徵提取
     
@@ -21,9 +21,6 @@ def execute(data: list, fs: float, rpm: float, Bearing: dict = None, **kwargs) -
         - features (dict): 提取的頻域特徵字典
     """
     try:
-        buffer = data[0]              # data[0] 已經是 BytesIO 物件，不用包
-        buffer.seek(0)                # 確保指標從開頭開始
-        data = np.load(buffer)         # 獲得array格式
        # 參數檢查
         if not isinstance(data, np.ndarray):
             raise ValueError("data 必須是 numpy 陣列")
@@ -117,6 +114,7 @@ def execute(data: list, fs: float, rpm: float, Bearing: dict = None, **kwargs) -
             features["freq_roughness"] = 0.0
         features["freq_rolloff"] = float(np.sqrt(np.sum(data * (frequencies - mean_val) ** 2) / total_power)) if total_power > 0 else 0.0 # 頻率滾降
         logger.info(f"頻域特徵提取完成 - 提取了 {len(features)} 個特徵")
+        features = {f"{alias}_{k}" if alias else k: v for k, v in features.items()}
         df = pd.DataFrame(list(features.items()), columns=["Feature", "Value"])
         return df
 

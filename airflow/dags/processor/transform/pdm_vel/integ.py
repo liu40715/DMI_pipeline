@@ -2,7 +2,7 @@ import numpy as np
 import logging
 logger = logging.getLogger(__name__)
 
-def execute(data: list, fs: float, **kwargs) -> np.ndarray:
+def execute(data: np.ndarray, fs: float, **kwargs) -> np.ndarray:
     """
     積分函數：使用精確梯形法將加速度訊號積分轉換為速度訊號，並處理漂移
     
@@ -18,25 +18,20 @@ def execute(data: list, fs: float, **kwargs) -> np.ndarray:
         Exception: 當處理過程發生錯誤時
     """
     try:
-        # 讀取 BytesIO 內容（若上游可能輸出 object 陣列，允許 pickle；請確保來源可信）
-        buffer = data[0]
-        buffer.seek(0)
-        arr = np.load(buffer, allow_pickle=True)
-
         # 參數檢查
-        if not isinstance(arr, np.ndarray):
+        if not isinstance(data, np.ndarray):
             raise ValueError("data 必須是 numpy 陣列")
-        if arr.size == 0:
+        if data.size == 0:
             raise ValueError("data 不能為空陣列")
         if not isinstance(fs, (int, float)):
             raise ValueError("fs 必須是數值類型")
         if fs <= 0:
             raise ValueError("取樣頻率 fs 必須大於 0")
-        if arr.size < 2:
+        if data.size < 2:
             raise ValueError("資料長度必須至少為 2 個樣本點才能進行積分")
 
         # 強制轉為 1D float64，將無法解析的元素視為 NaN
-        a = np.asarray(arr, dtype=object).ravel()
+        a = np.asarray(data, dtype=object).ravel()
         if a.dtype == object:
             a_conv = np.empty(a.size, dtype=np.float64)
             for i, v in enumerate(a):

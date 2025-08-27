@@ -1,0 +1,119 @@
+{
+  "dag_id": "template_dag_pipeline2",
+  "schedule_interval": "@once",
+  "start_date": "2025-06-25",
+  "catchup": false,
+  "owner": "test",
+  "tasks": [
+    {
+      "task_id": "extract_data_task",
+      "operator": "PythonOperator",
+      "processor_stage": "input",
+      "processor_method": "np_reader.standard",
+      "op_kwargs": {
+        "input_filename": "pdm_data.npy"
+      },
+      "position": {
+        "x": 123,
+        "y": 456
+      }
+    },
+    {
+      "task_id": "transform_data_task",
+      "operator": "PythonOperator",
+      "processor_stage": "transform",
+      "processor_method": "pdm_preproc.mean",
+      "op_kwargs": {
+        "fs": 6400,
+        "type": "RMS平均"
+      },
+      "dependencies": [
+        "extract_data_task"
+      ],
+      "position": {
+        "x": 123,
+        "y": 456
+      }
+    },
+    {
+      "task_id": "transform_data_task2",
+      "operator": "PythonOperator",
+      "processor_stage": "transform",
+      "processor_method": "pdm_preproc.windows",
+      "op_kwargs": {
+        "type": "hanning"
+      },
+      "dependencies": [
+        "transform_data_task"
+      ],
+      "position": {
+        "x": 123,
+        "y": 456
+      }
+    },
+    {
+      "task_id": "transform_data_task3",
+      "operator": "PythonOperator",
+      "processor_stage": "transform",
+      "processor_method": "pdm_preproc.filter",
+      "op_kwargs": {
+        "fs": 6400,
+        "lowcut": 2,
+        "highcut": 1000
+      },
+      "dependencies": [
+        "transform_data_task2"
+      ],
+      "position": {
+        "x": 123,
+        "y": 456
+      }
+    },
+    {
+      "task_id": "transform_data_task4",
+      "operator": "PythonOperator",
+      "processor_stage": "transform",
+      "processor_method": "pdm_vel.integ",
+      "op_kwargs": {
+        "fs": 6400
+      },
+      "dependencies": [
+        "transform_data_task3"
+      ],
+      "position": {
+        "x": 123,
+        "y": 456
+      }
+    },
+    {
+      "task_id": "transform_data_task5",
+      "operator": "PythonOperator",
+      "processor_stage": "transform",
+      "processor_method": "pdm_freq.fft",
+      "op_kwargs": {
+        "fs": 6400
+      },
+      "dependencies": [
+        "transform_data_task4"
+      ],
+      "position": {
+        "x": 123,
+        "y": 456
+      }
+    },
+    {
+      "task_id": "transform_data_task6",
+      "operator": "PythonOperator",
+      "processor_stage": "transform",
+      "processor_method": "pdm_features.feat_oa",
+      "op_kwargs": {},
+      "dependencies": [
+        "transform_data_task5"
+      ],
+      "position": {
+        "x": 123,
+        "y": 456
+      }
+    }
+  ]
+}

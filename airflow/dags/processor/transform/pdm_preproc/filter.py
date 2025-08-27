@@ -4,7 +4,7 @@ from scipy.signal import firwin, filtfilt
 logger = logging.getLogger(__name__)
 
 
-def execute(data: list, fs: float, lowcut: float, highcut: float, **kwargs) -> np.ndarray:
+def execute(data: np.ndarray, fs: float, lowcut: float, highcut: float, **kwargs) -> np.ndarray:
     """
     濾波函數：將時域訊號進行帶通濾波處理
     
@@ -21,9 +21,6 @@ def execute(data: list, fs: float, lowcut: float, highcut: float, **kwargs) -> n
         Exception: 當處理過程發生錯誤時
     """
     try:
-        buffer = data[0]              # data[0] 已經是 BytesIO 物件，不用包
-        buffer.seek(0)                # 確保指標從開頭開始
-        data = np.load(buffer)         # 獲得array格式
         logger.info(f" 採樣頻率: {fs},  低頻截止頻率: {lowcut}, 高頻截止頻率: {highcut}")
         # 參數檢查
         if not isinstance(data, np.ndarray):
