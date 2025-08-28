@@ -15,7 +15,7 @@ def execute(tags: list, buffer: int, **kwargs):
         token = _get_access_token() 
         for tag in tags:
             data = _fetch_raw_data(token,buffer,tag)
-            dict_data[tag] = data
+            dict_data[tag] = np.array(data)
         logger.info(f"成功讀取")
         return dict_data
     except Exception as e:
